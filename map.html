@@ -1,0 +1,4509 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_790687568a9c4fdeb195dea784d51280 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_790687568a9c4fdeb195dea784d51280" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_790687568a9c4fdeb195dea784d51280 = L.map(
+                "map_790687568a9c4fdeb195dea784d51280",
+                {
+                    center: [43.309941, -73.644447],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ab28e5cf7f4b14ea6c724bd1daf8e0eb = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ab28e5cf7f4b14ea6c724bd1daf8e0eb.addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var marker_bbf98397d9b713dfeea41616d2809400 = L.marker(
+                [43.309941, -73.644447],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_6f88c2b80db89f6139480515855d0ccd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_20581ee86db949c3faa2db923b9b8f1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c379edac8919ed131e2ba90428268bf9 = $(`<div id="html_c379edac8919ed131e2ba90428268bf9" style="width: 100.0%; height: 100.0%;">ZIP Code Glens Falls, NY USA</div>`)[0];
+                popup_20581ee86db949c3faa2db923b9b8f1d.setContent(html_c379edac8919ed131e2ba90428268bf9);
+            
+        
+
+        marker_bbf98397d9b713dfeea41616d2809400.bindPopup(popup_20581ee86db949c3faa2db923b9b8f1d)
+        ;
+
+        
+    
+    
+                marker_bbf98397d9b713dfeea41616d2809400.setIcon(icon_6f88c2b80db89f6139480515855d0ccd);
+            
+    
+            var marker_c8eb932874b9b1e32e9ca2bdebda3729 = L.marker(
+                [42.9783924, -78.7997616],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_e2e4497a84621a27675629b57f9d60f7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9db7cf303512ce368f0992466dab1092 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4202ac82e72e44ded6119fac7638f01e = $(`<div id="html_4202ac82e72e44ded6119fac7638f01e" style="width: 100.0%; height: 100.0%;">Amherst, NY</div>`)[0];
+                popup_9db7cf303512ce368f0992466dab1092.setContent(html_4202ac82e72e44ded6119fac7638f01e);
+            
+        
+
+        marker_c8eb932874b9b1e32e9ca2bdebda3729.bindPopup(popup_9db7cf303512ce368f0992466dab1092)
+        ;
+
+        
+    
+    
+                marker_c8eb932874b9b1e32e9ca2bdebda3729.setIcon(icon_e2e4497a84621a27675629b57f9d60f7);
+            
+    
+            var marker_236ab175b2e4e3bbf5806d876f5c4de3 = L.marker(
+                [42.9320202, -76.5672029],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_70c407f97d58639e51af938fb35da3fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a1412fc62d4292247e3009cb54e54383 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3da4cff95f4135320eebc302865d773d = $(`<div id="html_3da4cff95f4135320eebc302865d773d" style="width: 100.0%; height: 100.0%;">Auburn, NY</div>`)[0];
+                popup_a1412fc62d4292247e3009cb54e54383.setContent(html_3da4cff95f4135320eebc302865d773d);
+            
+        
+
+        marker_236ab175b2e4e3bbf5806d876f5c4de3.bindPopup(popup_a1412fc62d4292247e3009cb54e54383)
+        ;
+
+        
+    
+    
+                marker_236ab175b2e4e3bbf5806d876f5c4de3.setIcon(icon_70c407f97d58639e51af938fb35da3fc);
+            
+    
+            var marker_e417355aefa374d8e5c7d9a22fce4132 = L.marker(
+                [43.158679, -76.33271],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_267b0ee458fd5db3eefb70d708ba35fd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dc57480acca36f0c85f0836b5ea9b946 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9a1d347d7779cd72468923e349136996 = $(`<div id="html_9a1d347d7779cd72468923e349136996" style="width: 100.0%; height: 100.0%;">Baldwinsville, NY</div>`)[0];
+                popup_dc57480acca36f0c85f0836b5ea9b946.setContent(html_9a1d347d7779cd72468923e349136996);
+            
+        
+
+        marker_e417355aefa374d8e5c7d9a22fce4132.bindPopup(popup_dc57480acca36f0c85f0836b5ea9b946)
+        ;
+
+        
+    
+    
+                marker_e417355aefa374d8e5c7d9a22fce4132.setIcon(icon_267b0ee458fd5db3eefb70d708ba35fd);
+            
+    
+            var marker_1cfe73534797af62a1a02bdabaf4da91 = L.marker(
+                [42.9980144, -78.1875515],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_c0d5c6d88b87180294f97805ee156dee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_843d50031fe832a48f03eb315cec909d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b4e6c9c17ecb12b3ac83a8cb545384be = $(`<div id="html_b4e6c9c17ecb12b3ac83a8cb545384be" style="width: 100.0%; height: 100.0%;">Batavia, NY</div>`)[0];
+                popup_843d50031fe832a48f03eb315cec909d.setContent(html_b4e6c9c17ecb12b3ac83a8cb545384be);
+            
+        
+
+        marker_1cfe73534797af62a1a02bdabaf4da91.bindPopup(popup_843d50031fe832a48f03eb315cec909d)
+        ;
+
+        
+    
+    
+                marker_1cfe73534797af62a1a02bdabaf4da91.setIcon(icon_c0d5c6d88b87180294f97805ee156dee);
+            
+    
+            var marker_01341cd58d7d0b556eae0f139f5229f6 = L.marker(
+                [42.098698, -75.9125187],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_c0a1074b6ca85a73fd5e1869d109177a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_85064119b2326211fc5ccf9442f9eb6a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7dc9df293b5a4f9e3fe74287b21c7c0c = $(`<div id="html_7dc9df293b5a4f9e3fe74287b21c7c0c" style="width: 100.0%; height: 100.0%;">Binghamton, NY</div>`)[0];
+                popup_85064119b2326211fc5ccf9442f9eb6a.setContent(html_7dc9df293b5a4f9e3fe74287b21c7c0c);
+            
+        
+
+        marker_01341cd58d7d0b556eae0f139f5229f6.bindPopup(popup_85064119b2326211fc5ccf9442f9eb6a)
+        ;
+
+        
+    
+    
+                marker_01341cd58d7d0b556eae0f139f5229f6.setIcon(icon_c0a1074b6ca85a73fd5e1869d109177a);
+            
+    
+            var marker_49d3157823e6dd72f36b68d80b45386c = L.marker(
+                [44.809319, -74.7760865],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_bc48b394d5b00ac5ed5caab54531e753 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_056c3b49bc23fe0e561a2b5956eaf848 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_996c859f1936c6f838335d0e3917cfbb = $(`<div id="html_996c859f1936c6f838335d0e3917cfbb" style="width: 100.0%; height: 100.0%;">Brasher Falls, NY</div>`)[0];
+                popup_056c3b49bc23fe0e561a2b5956eaf848.setContent(html_996c859f1936c6f838335d0e3917cfbb);
+            
+        
+
+        marker_49d3157823e6dd72f36b68d80b45386c.bindPopup(popup_056c3b49bc23fe0e561a2b5956eaf848)
+        ;
+
+        
+    
+    
+                marker_49d3157823e6dd72f36b68d80b45386c.setIcon(icon_bc48b394d5b00ac5ed5caab54531e753);
+            
+    
+            var marker_38722b90a2c5308cf36989e0fe2125d3 = L.marker(
+                [41.3972985, -73.6165288],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_48bc03c5cbde5657faef50037ba54b60 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_21848a3438fa81ad4df271c72e1820a4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5b01b4038a6087726bc68f6eec5a1d30 = $(`<div id="html_5b01b4038a6087726bc68f6eec5a1d30" style="width: 100.0%; height: 100.0%;">Brewster, NY</div>`)[0];
+                popup_21848a3438fa81ad4df271c72e1820a4.setContent(html_5b01b4038a6087726bc68f6eec5a1d30);
+            
+        
+
+        marker_38722b90a2c5308cf36989e0fe2125d3.bindPopup(popup_21848a3438fa81ad4df271c72e1820a4)
+        ;
+
+        
+    
+    
+                marker_38722b90a2c5308cf36989e0fe2125d3.setIcon(icon_48bc03c5cbde5657faef50037ba54b60);
+            
+    
+            var marker_5b13af0656931be4caae9011534e3800 = L.marker(
+                [40.9381544, -73.8320784],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_9fc44cb79fa45a4d56f63c7b9c6e6d06 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d7c1df137384f928b531c2d073019d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d179fe18ac441dc0f0e7a8da5c616916 = $(`<div id="html_d179fe18ac441dc0f0e7a8da5c616916" style="width: 100.0%; height: 100.0%;">Bronxville, NY</div>`)[0];
+                popup_9d7c1df137384f928b531c2d073019d3.setContent(html_d179fe18ac441dc0f0e7a8da5c616916);
+            
+        
+
+        marker_5b13af0656931be4caae9011534e3800.bindPopup(popup_9d7c1df137384f928b531c2d073019d3)
+        ;
+
+        
+    
+    
+                marker_5b13af0656931be4caae9011534e3800.setIcon(icon_9fc44cb79fa45a4d56f63c7b9c6e6d06);
+            
+    
+            var marker_5694ae8ca539e97ff457979a982f505e = L.marker(
+                [40.6526006, -73.9497211],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_9da213ca0470ecf3b3c05f62db51a647 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_11a6c6d9e86ea428c961e38cc7ba649c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_02d106048d7e68f53ccc674b7069514e = $(`<div id="html_02d106048d7e68f53ccc674b7069514e" style="width: 100.0%; height: 100.0%;">Brooklyn, NY</div>`)[0];
+                popup_11a6c6d9e86ea428c961e38cc7ba649c.setContent(html_02d106048d7e68f53ccc674b7069514e);
+            
+        
+
+        marker_5694ae8ca539e97ff457979a982f505e.bindPopup(popup_11a6c6d9e86ea428c961e38cc7ba649c)
+        ;
+
+        
+    
+    
+                marker_5694ae8ca539e97ff457979a982f505e.setIcon(icon_9da213ca0470ecf3b3c05f62db51a647);
+            
+    
+            var marker_8340a8d4d8e9e82af3d1de11992a1cb2 = L.marker(
+                [42.8864163, -78.8781493],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_d8bebcbaa4e2e7009f60bc9e88ff0d20 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_54987b785d6a346b65501d235b18df39 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da5d945ed23b881c317fe5d6d0c818fa = $(`<div id="html_da5d945ed23b881c317fe5d6d0c818fa" style="width: 100.0%; height: 100.0%;">Buffalo, NY</div>`)[0];
+                popup_54987b785d6a346b65501d235b18df39.setContent(html_da5d945ed23b881c317fe5d6d0c818fa);
+            
+        
+
+        marker_8340a8d4d8e9e82af3d1de11992a1cb2.bindPopup(popup_54987b785d6a346b65501d235b18df39)
+        ;
+
+        
+    
+    
+                marker_8340a8d4d8e9e82af3d1de11992a1cb2.setIcon(icon_d8bebcbaa4e2e7009f60bc9e88ff0d20);
+            
+    
+            var marker_6eacec333be208c23d6e04a6e66252e6 = L.marker(
+                [42.8864163, -78.8781493],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_eebdbae779c88aec1ee65d99c03cf5db = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d224bb2f15505d74c3e50966a7d92c96 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dbacff16f27abc12c05062e1768ae26e = $(`<div id="html_dbacff16f27abc12c05062e1768ae26e" style="width: 100.0%; height: 100.0%;">Buffalo, NY</div>`)[0];
+                popup_d224bb2f15505d74c3e50966a7d92c96.setContent(html_dbacff16f27abc12c05062e1768ae26e);
+            
+        
+
+        marker_6eacec333be208c23d6e04a6e66252e6.bindPopup(popup_d224bb2f15505d74c3e50966a7d92c96)
+        ;
+
+        
+    
+    
+                marker_6eacec333be208c23d6e04a6e66252e6.setIcon(icon_eebdbae779c88aec1ee65d99c03cf5db);
+            
+    
+            var marker_b49731480195c162c6a060aafe1d78d2 = L.marker(
+                [42.8864163, -78.8781493],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_5a958ca66fd37614e9c53806ae5e6faa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_62a1ae594e7616bb9eb4d7b02130ad2a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_41e4cd7f6206bc7a7a52ee1b3cf7f7e2 = $(`<div id="html_41e4cd7f6206bc7a7a52ee1b3cf7f7e2" style="width: 100.0%; height: 100.0%;">Buffalo, NY</div>`)[0];
+                popup_62a1ae594e7616bb9eb4d7b02130ad2a.setContent(html_41e4cd7f6206bc7a7a52ee1b3cf7f7e2);
+            
+        
+
+        marker_b49731480195c162c6a060aafe1d78d2.bindPopup(popup_62a1ae594e7616bb9eb4d7b02130ad2a)
+        ;
+
+        
+    
+    
+                marker_b49731480195c162c6a060aafe1d78d2.setIcon(icon_5a958ca66fd37614e9c53806ae5e6faa);
+            
+    
+            var marker_e5d3f07eec790295db89e87891aaac73 = L.marker(
+                [42.8864163, -78.8781493],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_7eece2e4db1e8f0bcdec28624c5d10cd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8142aeb0ac37fb07409e5b72a8966b14 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf06cbfef0340c6962476bc2e59f04e5 = $(`<div id="html_bf06cbfef0340c6962476bc2e59f04e5" style="width: 100.0%; height: 100.0%;">Buffalo, NY</div>`)[0];
+                popup_8142aeb0ac37fb07409e5b72a8966b14.setContent(html_bf06cbfef0340c6962476bc2e59f04e5);
+            
+        
+
+        marker_e5d3f07eec790295db89e87891aaac73.bindPopup(popup_8142aeb0ac37fb07409e5b72a8966b14)
+        ;
+
+        
+    
+    
+                marker_e5d3f07eec790295db89e87891aaac73.setIcon(icon_7eece2e4db1e8f0bcdec28624c5d10cd);
+            
+    
+            var marker_14070e548bc76f47bf8d9d0939505a96 = L.marker(
+                [42.8864163, -78.8781493],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_247cf9007cb6a1f4cbc550a2beda9a2a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a23d653e648d3642f6166d95e22ed1c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2c51fb55a3f863820a5e3593a4292373 = $(`<div id="html_2c51fb55a3f863820a5e3593a4292373" style="width: 100.0%; height: 100.0%;">Buffalo, NY</div>`)[0];
+                popup_a23d653e648d3642f6166d95e22ed1c5.setContent(html_2c51fb55a3f863820a5e3593a4292373);
+            
+        
+
+        marker_14070e548bc76f47bf8d9d0939505a96.bindPopup(popup_a23d653e648d3642f6166d95e22ed1c5)
+        ;
+
+        
+    
+    
+                marker_14070e548bc76f47bf8d9d0939505a96.setIcon(icon_247cf9007cb6a1f4cbc550a2beda9a2a);
+            
+    
+            var marker_74d767dcfc2bc7c24ed0f815f7ba971b = L.marker(
+                [42.8864163, -78.8781493],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_a8f5c99fd6428f5edf4c5fa9ef9a1974 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b4c74a6a1d4d34876bcabc688af8cf22 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f7ed6820af3b0216d5622f52df508bc = $(`<div id="html_4f7ed6820af3b0216d5622f52df508bc" style="width: 100.0%; height: 100.0%;">Buffalo, NY</div>`)[0];
+                popup_b4c74a6a1d4d34876bcabc688af8cf22.setContent(html_4f7ed6820af3b0216d5622f52df508bc);
+            
+        
+
+        marker_74d767dcfc2bc7c24ed0f815f7ba971b.bindPopup(popup_b4c74a6a1d4d34876bcabc688af8cf22)
+        ;
+
+        
+    
+    
+                marker_74d767dcfc2bc7c24ed0f815f7ba971b.setIcon(icon_a8f5c99fd6428f5edf4c5fa9ef9a1974);
+            
+    
+            var marker_2854be27c17fc91da857b069e073b0d7 = L.marker(
+                [43.039233, -76.3040965],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_5bf659fbdfccc291cd7fede8959c4256 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ccc27bcfd83a8698eae4fa778e9bb3c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d386199c121d26c635f85d055b30f1ce = $(`<div id="html_d386199c121d26c635f85d055b30f1ce" style="width: 100.0%; height: 100.0%;">Camillus, NY</div>`)[0];
+                popup_ccc27bcfd83a8698eae4fa778e9bb3c3.setContent(html_d386199c121d26c635f85d055b30f1ce);
+            
+        
+
+        marker_2854be27c17fc91da857b069e073b0d7.bindPopup(popup_ccc27bcfd83a8698eae4fa778e9bb3c3)
+        ;
+
+        
+    
+    
+                marker_2854be27c17fc91da857b069e073b0d7.setIcon(icon_5bf659fbdfccc291cd7fede8959c4256);
+            
+    
+            var marker_e1c339dfcbe0285de9110dc1927cb4da = L.marker(
+                [42.850682, -77.3191454],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_4d138dcb093bd056855e5ffacb5ab283 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_57936d38cb23ab7e6660f7f4ac8814a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b622b3382e5dcbc81e11e4d8729131e1 = $(`<div id="html_b622b3382e5dcbc81e11e4d8729131e1" style="width: 100.0%; height: 100.0%;">Canandaigua, NY</div>`)[0];
+                popup_57936d38cb23ab7e6660f7f4ac8814a1.setContent(html_b622b3382e5dcbc81e11e4d8729131e1);
+            
+        
+
+        marker_e1c339dfcbe0285de9110dc1927cb4da.bindPopup(popup_57936d38cb23ab7e6660f7f4ac8814a1)
+        ;
+
+        
+    
+    
+                marker_e1c339dfcbe0285de9110dc1927cb4da.setIcon(icon_4d138dcb093bd056855e5ffacb5ab283);
+            
+    
+            var marker_ac3fb59484cf881d53beb31c83708c64 = L.marker(
+                [44.5956163, -75.1690942],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_b606b542ab112fcace6f66ea68293002 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22528b72fcec4bb467a2851b3528f3f8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_12238d2a1616ea6be8658469fe31303c = $(`<div id="html_12238d2a1616ea6be8658469fe31303c" style="width: 100.0%; height: 100.0%;">Canton, NY</div>`)[0];
+                popup_22528b72fcec4bb467a2851b3528f3f8.setContent(html_12238d2a1616ea6be8658469fe31303c);
+            
+        
+
+        marker_ac3fb59484cf881d53beb31c83708c64.bindPopup(popup_22528b72fcec4bb467a2851b3528f3f8)
+        ;
+
+        
+    
+    
+                marker_ac3fb59484cf881d53beb31c83708c64.setIcon(icon_b606b542ab112fcace6f66ea68293002);
+            
+    
+            var marker_c2e97df6daeb24c535641e0ffd60fbee = L.marker(
+                [44.889931, -73.43605],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_176ad9ca47b72f67a12767f60b6f8d2b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d775168a904f629a31b4d099565a2949 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a22d4caa5ea2466cff16a3504a03b287 = $(`<div id="html_a22d4caa5ea2466cff16a3504a03b287" style="width: 100.0%; height: 100.0%;">Chazy, NY</div>`)[0];
+                popup_d775168a904f629a31b4d099565a2949.setContent(html_a22d4caa5ea2466cff16a3504a03b287);
+            
+        
+
+        marker_c2e97df6daeb24c535641e0ffd60fbee.bindPopup(popup_d775168a904f629a31b4d099565a2949)
+        ;
+
+        
+    
+    
+                marker_c2e97df6daeb24c535641e0ffd60fbee.setIcon(icon_176ad9ca47b72f67a12767f60b6f8d2b);
+            
+    
+            var marker_74d62fc3795626a83fecc749fd7fe51d = L.marker(
+                [42.9033917, -78.7547536],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_4b1db8b39ed15b0773a706a07743a223 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa55cadf342d91de5167e41a180aff25 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a9b1fc9ae855e02fa8b5d8c9a5b33c46 = $(`<div id="html_a9b1fc9ae855e02fa8b5d8c9a5b33c46" style="width: 100.0%; height: 100.0%;">Cheektowaga, NY</div>`)[0];
+                popup_fa55cadf342d91de5167e41a180aff25.setContent(html_a9b1fc9ae855e02fa8b5d8c9a5b33c46);
+            
+        
+
+        marker_74d62fc3795626a83fecc749fd7fe51d.bindPopup(popup_fa55cadf342d91de5167e41a180aff25)
+        ;
+
+        
+    
+    
+                marker_74d62fc3795626a83fecc749fd7fe51d.setIcon(icon_4b1db8b39ed15b0773a706a07743a223);
+            
+    
+            var marker_b8a70446782687a52c119edcffa99786 = L.marker(
+                [42.9033917, -78.7547536],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_717c4525ceb04b76501f94db56b6d9a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4d879941f1153f88b01720d7fdb2c0c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed0b29c3ad5b1c58879c3a752b54e7a1 = $(`<div id="html_ed0b29c3ad5b1c58879c3a752b54e7a1" style="width: 100.0%; height: 100.0%;">Cheektowaga, NY</div>`)[0];
+                popup_4d879941f1153f88b01720d7fdb2c0c7.setContent(html_ed0b29c3ad5b1c58879c3a752b54e7a1);
+            
+        
+
+        marker_b8a70446782687a52c119edcffa99786.bindPopup(popup_4d879941f1153f88b01720d7fdb2c0c7)
+        ;
+
+        
+    
+    
+                marker_b8a70446782687a52c119edcffa99786.setIcon(icon_717c4525ceb04b76501f94db56b6d9a4);
+            
+    
+            var marker_f344812e6e9a0626bb7b1b6d6140eee3 = L.marker(
+                [43.0080332, -78.6322021],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_3f6a6ecca6521eadde535800237e03a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4fb70777a2752ea6bf3e4e5b7d3a0177 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_907d1504c345ab7f32013e1f8007f61d = $(`<div id="html_907d1504c345ab7f32013e1f8007f61d" style="width: 100.0%; height: 100.0%;">Clarence Center, NY</div>`)[0];
+                popup_4fb70777a2752ea6bf3e4e5b7d3a0177.setContent(html_907d1504c345ab7f32013e1f8007f61d);
+            
+        
+
+        marker_f344812e6e9a0626bb7b1b6d6140eee3.bindPopup(popup_4fb70777a2752ea6bf3e4e5b7d3a0177)
+        ;
+
+        
+    
+    
+                marker_f344812e6e9a0626bb7b1b6d6140eee3.setIcon(icon_3f6a6ecca6521eadde535800237e03a4);
+            
+    
+            var marker_e3dd2c28cd8e4493e94cdef634546040 = L.marker(
+                [44.239491, -76.085776],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_5e252565a0d35eb2bbeabf8fb5df4aaf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1f9cd2808e628dfd169d31297b8421e9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_84bcdb58529432c6026eb636c8a02c99 = $(`<div id="html_84bcdb58529432c6026eb636c8a02c99" style="width: 100.0%; height: 100.0%;">Clayton, NY</div>`)[0];
+                popup_1f9cd2808e628dfd169d31297b8421e9.setContent(html_84bcdb58529432c6026eb636c8a02c99);
+            
+        
+
+        marker_e3dd2c28cd8e4493e94cdef634546040.bindPopup(popup_1f9cd2808e628dfd169d31297b8421e9)
+        ;
+
+        
+    
+    
+                marker_e3dd2c28cd8e4493e94cdef634546040.setIcon(icon_5e252565a0d35eb2bbeabf8fb5df4aaf);
+            
+    
+            var marker_9d1da3e5f1c135c3a4c8716141e61504 = L.marker(
+                [42.8631868, -73.7812103],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_3fb52163098d095d8354ac1274ffea63 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d2d400da0a422158229cb821dd95cad3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_53fafe9cfb8d745ee9ac893c58d38bc8 = $(`<div id="html_53fafe9cfb8d745ee9ac893c58d38bc8" style="width: 100.0%; height: 100.0%;">Clifton Park, NY</div>`)[0];
+                popup_d2d400da0a422158229cb821dd95cad3.setContent(html_53fafe9cfb8d745ee9ac893c58d38bc8);
+            
+        
+
+        marker_9d1da3e5f1c135c3a4c8716141e61504.bindPopup(popup_d2d400da0a422158229cb821dd95cad3)
+        ;
+
+        
+    
+    
+                marker_9d1da3e5f1c135c3a4c8716141e61504.setIcon(icon_3fb52163098d095d8354ac1274ffea63);
+            
+    
+            var marker_86d16f094f24d18ebcf2d23f9823ff52 = L.marker(
+                [42.8631868, -73.7812103],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_26238d05cca03607c5334c0e3eaee92a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6a33936cdb59719e27cdf8da818d2437 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6c0b3371662c01a0cbaf17dad8a10dc4 = $(`<div id="html_6c0b3371662c01a0cbaf17dad8a10dc4" style="width: 100.0%; height: 100.0%;">Clifton Park, NY</div>`)[0];
+                popup_6a33936cdb59719e27cdf8da818d2437.setContent(html_6c0b3371662c01a0cbaf17dad8a10dc4);
+            
+        
+
+        marker_86d16f094f24d18ebcf2d23f9823ff52.bindPopup(popup_6a33936cdb59719e27cdf8da818d2437)
+        ;
+
+        
+    
+    
+                marker_86d16f094f24d18ebcf2d23f9823ff52.setIcon(icon_26238d05cca03607c5334c0e3eaee92a);
+            
+    
+            var marker_2bd18f69c15a9373e1c86c27f74e8a7c = L.marker(
+                [44.7278943, -73.6686982],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_d9b78bffc58d9dc1a043a197981354d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_45bc1a899b6aeec1cabbdd99e9b098b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a825f513e0548a713cb364787e187dd0 = $(`<div id="html_a825f513e0548a713cb364787e187dd0" style="width: 100.0%; height: 100.0%;">Clinton, NY</div>`)[0];
+                popup_45bc1a899b6aeec1cabbdd99e9b098b1.setContent(html_a825f513e0548a713cb364787e187dd0);
+            
+        
+
+        marker_2bd18f69c15a9373e1c86c27f74e8a7c.bindPopup(popup_45bc1a899b6aeec1cabbdd99e9b098b1)
+        ;
+
+        
+    
+    
+                marker_2bd18f69c15a9373e1c86c27f74e8a7c.setIcon(icon_d9b78bffc58d9dc1a043a197981354d7);
+            
+    
+            var marker_12c4b912545281d13c9604c5630e1193 = L.marker(
+                [42.5842136, -76.0704906],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_e00061e1b58d518028df276066b05aa6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b1ed6613c24114d874cb5c1d466bb759 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f497ccb42ad5dde939757cedcb1a8df = $(`<div id="html_1f497ccb42ad5dde939757cedcb1a8df" style="width: 100.0%; height: 100.0%;">Cortland, NY</div>`)[0];
+                popup_b1ed6613c24114d874cb5c1d466bb759.setContent(html_1f497ccb42ad5dde939757cedcb1a8df);
+            
+        
+
+        marker_12c4b912545281d13c9604c5630e1193.bindPopup(popup_b1ed6613c24114d874cb5c1d466bb759)
+        ;
+
+        
+    
+    
+                marker_12c4b912545281d13c9604c5630e1193.setIcon(icon_e00061e1b58d518028df276066b05aa6);
+            
+    
+            var marker_4c4594ac10a40561bf0b25f53e4c71d3 = L.marker(
+                [42.6251239, -73.8381351],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_866a9dc1274d3e5fda1fb05f6b952eac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_54e005ff6eadfd906ac94ea22dca11ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9dc13329b60dc08d2ab865155e40c1d = $(`<div id="html_b9dc13329b60dc08d2ab865155e40c1d" style="width: 100.0%; height: 100.0%;">Delmar, NY</div>`)[0];
+                popup_54e005ff6eadfd906ac94ea22dca11ba.setContent(html_b9dc13329b60dc08d2ab865155e40c1d);
+            
+        
+
+        marker_4c4594ac10a40561bf0b25f53e4c71d3.bindPopup(popup_54e005ff6eadfd906ac94ea22dca11ba)
+        ;
+
+        
+    
+    
+                marker_4c4594ac10a40561bf0b25f53e4c71d3.setIcon(icon_866a9dc1274d3e5fda1fb05f6b952eac);
+            
+    
+            var marker_d05c7de7a211c4dd51e0d2d8577a3a5d = L.marker(
+                [40.802847, -73.3371556],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_f26c8f6b114b4d3e360ebfaf846dd555 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_12e80bec2ac8a6f4c10eedde5877da51 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a6feae83fe8f8837d346d6dcaa3838fc = $(`<div id="html_a6feae83fe8f8837d346d6dcaa3838fc" style="width: 100.0%; height: 100.0%;">Dix Hills, NY</div>`)[0];
+                popup_12e80bec2ac8a6f4c10eedde5877da51.setContent(html_a6feae83fe8f8837d346d6dcaa3838fc);
+            
+        
+
+        marker_d05c7de7a211c4dd51e0d2d8577a3a5d.bindPopup(popup_12e80bec2ac8a6f4c10eedde5877da51)
+        ;
+
+        
+    
+    
+                marker_d05c7de7a211c4dd51e0d2d8577a3a5d.setIcon(icon_f26c8f6b114b4d3e360ebfaf846dd555);
+            
+    
+            var marker_356320813cacdc13ff71802cf98c57d3 = L.marker(
+                [40.802847, -73.3371556],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_95b4b370f84e6f1b23a6e93e418e0ec7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ef6d618cf6a8845d5a53c6d9be94970 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be0686034c266abe4e296377c469c801 = $(`<div id="html_be0686034c266abe4e296377c469c801" style="width: 100.0%; height: 100.0%;">Dix Hills, NY</div>`)[0];
+                popup_0ef6d618cf6a8845d5a53c6d9be94970.setContent(html_be0686034c266abe4e296377c469c801);
+            
+        
+
+        marker_356320813cacdc13ff71802cf98c57d3.bindPopup(popup_0ef6d618cf6a8845d5a53c6d9be94970)
+        ;
+
+        
+    
+    
+                marker_356320813cacdc13ff71802cf98c57d3.setIcon(icon_95b4b370f84e6f1b23a6e93e418e0ec7);
+            
+    
+            var marker_b4b3578aaa05838c66d99ccf593b04d3 = L.marker(
+                [42.7689141, -78.6177611],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_a290b1f590124bdcaa83d265a0f5b9e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_478b4264a58ec9b3468619322856663f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2315db648714c45736e423f71bb8f989 = $(`<div id="html_2315db648714c45736e423f71bb8f989" style="width: 100.0%; height: 100.0%;">East Aurora, NY</div>`)[0];
+                popup_478b4264a58ec9b3468619322856663f.setContent(html_2315db648714c45736e423f71bb8f989);
+            
+        
+
+        marker_b4b3578aaa05838c66d99ccf593b04d3.bindPopup(popup_478b4264a58ec9b3468619322856663f)
+        ;
+
+        
+    
+    
+                marker_b4b3578aaa05838c66d99ccf593b04d3.setIcon(icon_a290b1f590124bdcaa83d265a0f5b9e9);
+            
+    
+            var marker_3c464ac5f59123cfb399a4601e07a340 = L.marker(
+                [40.721775, -73.5582912],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_33e9847c56b8446b0a5c7349aa13cea6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b55e8f92a72e07461b83d0ded914ebab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2c3420532d2d9eedbfa4bbe069be03d4 = $(`<div id="html_2c3420532d2d9eedbfa4bbe069be03d4" style="width: 100.0%; height: 100.0%;">East Meadow, NY</div>`)[0];
+                popup_b55e8f92a72e07461b83d0ded914ebab.setContent(html_2c3420532d2d9eedbfa4bbe069be03d4);
+            
+        
+
+        marker_3c464ac5f59123cfb399a4601e07a340.bindPopup(popup_b55e8f92a72e07461b83d0ded914ebab)
+        ;
+
+        
+    
+    
+                marker_3c464ac5f59123cfb399a4601e07a340.setIcon(icon_33e9847c56b8446b0a5c7349aa13cea6);
+            
+    
+            var marker_bde7d5f2620d096e28c846562f146154 = L.marker(
+                [42.0897965, -76.8077338],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_eab9893f5faf68639a8057744480fb1b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_612d3c6d56f98afa47c04234d70c7866 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82e1d71f5b92c871aa24239f3f41f83e = $(`<div id="html_82e1d71f5b92c871aa24239f3f41f83e" style="width: 100.0%; height: 100.0%;">Elmira, NY</div>`)[0];
+                popup_612d3c6d56f98afa47c04234d70c7866.setContent(html_82e1d71f5b92c871aa24239f3f41f83e);
+            
+        
+
+        marker_bde7d5f2620d096e28c846562f146154.bindPopup(popup_612d3c6d56f98afa47c04234d70c7866)
+        ;
+
+        
+    
+    
+                marker_bde7d5f2620d096e28c846562f146154.setIcon(icon_eab9893f5faf68639a8057744480fb1b);
+            
+    
+            var marker_92b3d27937ad8c9b7b4e4c75ca0eef24 = L.marker(
+                [41.0550969, -73.8201338],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_e2cf97edad3cb6fa14a0440900912e10 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aabf26e67b467d4a1e4558e214f01d4d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8e6ecb1fb6ad952fa55f14a6d3f9043d = $(`<div id="html_8e6ecb1fb6ad952fa55f14a6d3f9043d" style="width: 100.0%; height: 100.0%;">Elmsford, NY</div>`)[0];
+                popup_aabf26e67b467d4a1e4558e214f01d4d.setContent(html_8e6ecb1fb6ad952fa55f14a6d3f9043d);
+            
+        
+
+        marker_92b3d27937ad8c9b7b4e4c75ca0eef24.bindPopup(popup_aabf26e67b467d4a1e4558e214f01d4d)
+        ;
+
+        
+    
+    
+                marker_92b3d27937ad8c9b7b4e4c75ca0eef24.setIcon(icon_e2cf97edad3cb6fa14a0440900912e10);
+            
+    
+            var marker_fde1ecd42460ca5731b7a663491ebb1f = L.marker(
+                [43.0993, -77.443014],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_e9c542aaa8e3809bfa2fe1e9dff16e23 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f649ec4927177859992e1650d5240775 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b96347012d983cfb66cc67c7b862772 = $(`<div id="html_1b96347012d983cfb66cc67c7b862772" style="width: 100.0%; height: 100.0%;">Fairport, NY</div>`)[0];
+                popup_f649ec4927177859992e1650d5240775.setContent(html_1b96347012d983cfb66cc67c7b862772);
+            
+        
+
+        marker_fde1ecd42460ca5731b7a663491ebb1f.bindPopup(popup_f649ec4927177859992e1650d5240775)
+        ;
+
+        
+    
+    
+                marker_fde1ecd42460ca5731b7a663491ebb1f.setIcon(icon_e9c542aaa8e3809bfa2fe1e9dff16e23);
+            
+    
+            var marker_89d06bda28d231ce6fa2e8dc6bb773e8 = L.marker(
+                [44.98912, -74.4941905],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_85210dc091fff0784370a190f95ef207 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a3d52d08c36543ddfa941484e706752e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_125a0c7679ade83aaf57975ddea2a6eb = $(`<div id="html_125a0c7679ade83aaf57975ddea2a6eb" style="width: 100.0%; height: 100.0%;">Fort Covington, NY</div>`)[0];
+                popup_a3d52d08c36543ddfa941484e706752e.setContent(html_125a0c7679ade83aaf57975ddea2a6eb);
+            
+        
+
+        marker_89d06bda28d231ce6fa2e8dc6bb773e8.bindPopup(popup_a3d52d08c36543ddfa941484e706752e)
+        ;
+
+        
+    
+    
+                marker_89d06bda28d231ce6fa2e8dc6bb773e8.setIcon(icon_85210dc091fff0784370a190f95ef207);
+            
+    
+            var marker_2c32ccf686b5c9e2ceb2f1e4a2c28d14 = L.marker(
+                [42.4423544, -79.3321008],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_5f93dcd6a2625e24549c6e872db26df5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a0bba759bea628c7674efa7b41ae3e70 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3fe75679399957db4c3e6787d634649e = $(`<div id="html_3fe75679399957db4c3e6787d634649e" style="width: 100.0%; height: 100.0%;">Fredonia, NY</div>`)[0];
+                popup_a0bba759bea628c7674efa7b41ae3e70.setContent(html_3fe75679399957db4c3e6787d634649e);
+            
+        
+
+        marker_2c32ccf686b5c9e2ceb2f1e4a2c28d14.bindPopup(popup_a0bba759bea628c7674efa7b41ae3e70)
+        ;
+
+        
+    
+    
+                marker_2c32ccf686b5c9e2ceb2f1e4a2c28d14.setIcon(icon_5f93dcd6a2625e24549c6e872db26df5);
+            
+    
+            var marker_9883f436d47486b7f3a7b18d280b7c4b = L.marker(
+                [40.6576071, -73.5835826],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_2f1aeb8ff55d716025b5ecba59481d04 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7caf83b87e0f818215cc0fb901ef7d04 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9b5ca5381afecb684d301ac191541bcf = $(`<div id="html_9b5ca5381afecb684d301ac191541bcf" style="width: 100.0%; height: 100.0%;">Freeport, NY</div>`)[0];
+                popup_7caf83b87e0f818215cc0fb901ef7d04.setContent(html_9b5ca5381afecb684d301ac191541bcf);
+            
+        
+
+        marker_9883f436d47486b7f3a7b18d280b7c4b.bindPopup(popup_7caf83b87e0f818215cc0fb901ef7d04)
+        ;
+
+        
+    
+    
+                marker_9883f436d47486b7f3a7b18d280b7c4b.setIcon(icon_2f1aeb8ff55d716025b5ecba59481d04);
+            
+    
+            var marker_aeeef694feffdb6f74c06505c02edbf7 = L.marker(
+                [40.6576071, -73.5835826],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_7fe5bcffb57d6a5bb637a5f590ba1322 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4e4d80a4add95c7064f0d6f617f15544 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7f5b46f9d14df0719daeeaeeff3f62a9 = $(`<div id="html_7f5b46f9d14df0719daeeaeeff3f62a9" style="width: 100.0%; height: 100.0%;">Freeport, NY</div>`)[0];
+                popup_4e4d80a4add95c7064f0d6f617f15544.setContent(html_7f5b46f9d14df0719daeeaeeff3f62a9);
+            
+        
+
+        marker_aeeef694feffdb6f74c06505c02edbf7.bindPopup(popup_4e4d80a4add95c7064f0d6f617f15544)
+        ;
+
+        
+    
+    
+                marker_aeeef694feffdb6f74c06505c02edbf7.setIcon(icon_7fe5bcffb57d6a5bb637a5f590ba1322);
+            
+    
+            var marker_c766de9527e46c78bfebe1579fb35e8e = L.marker(
+                [43.1061507, -74.4461771],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_2d8376b93496dc2a2c4c049b6680a23c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d0e52fc260efdb8fc2fbf9e36c23b243 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8621041f0e065b46c45093d1f79f63e4 = $(`<div id="html_8621041f0e065b46c45093d1f79f63e4" style="width: 100.0%; height: 100.0%;">Fulton, NY</div>`)[0];
+                popup_d0e52fc260efdb8fc2fbf9e36c23b243.setContent(html_8621041f0e065b46c45093d1f79f63e4);
+            
+        
+
+        marker_c766de9527e46c78bfebe1579fb35e8e.bindPopup(popup_d0e52fc260efdb8fc2fbf9e36c23b243)
+        ;
+
+        
+    
+    
+                marker_c766de9527e46c78bfebe1579fb35e8e.setIcon(icon_2d8376b93496dc2a2c4c049b6680a23c);
+            
+    
+            var marker_6f5219e0095cd96b8f57c197bd9f06aa = L.marker(
+                [42.795896, -77.816947],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_9962e2790527130ebb370d9f3554195c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6bced9dd8ee32d6d068c1629a85e2854 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_edf4fec5959be1e97afc989e0691579e = $(`<div id="html_edf4fec5959be1e97afc989e0691579e" style="width: 100.0%; height: 100.0%;">Geneseo, NY</div>`)[0];
+                popup_6bced9dd8ee32d6d068c1629a85e2854.setContent(html_edf4fec5959be1e97afc989e0691579e);
+            
+        
+
+        marker_6f5219e0095cd96b8f57c197bd9f06aa.bindPopup(popup_6bced9dd8ee32d6d068c1629a85e2854)
+        ;
+
+        
+    
+    
+                marker_6f5219e0095cd96b8f57c197bd9f06aa.setIcon(icon_9962e2790527130ebb370d9f3554195c);
+            
+    
+            var marker_777dcb9d70aa072f36f32799988fe1e3 = L.marker(
+                [42.8690271, -76.9786122],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_c1e6305539e401bca9084e555e1f9f6c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_731ed62c99f894b633e5461349729d03 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f55cbac24fc24a5a9b92b9ffd6c07a7e = $(`<div id="html_f55cbac24fc24a5a9b92b9ffd6c07a7e" style="width: 100.0%; height: 100.0%;">Geneva, NY</div>`)[0];
+                popup_731ed62c99f894b633e5461349729d03.setContent(html_f55cbac24fc24a5a9b92b9ffd6c07a7e);
+            
+        
+
+        marker_777dcb9d70aa072f36f32799988fe1e3.bindPopup(popup_731ed62c99f894b633e5461349729d03)
+        ;
+
+        
+    
+    
+                marker_777dcb9d70aa072f36f32799988fe1e3.setIcon(icon_c1e6305539e401bca9084e555e1f9f6c);
+            
+    
+            var marker_19046db366ca2a91e165b48962e7e487 = L.marker(
+                [43.309941, -73.644447],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_b11591b1938ad6289042b200a3e6206d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3d7e83804349e2421a16f3a1077a53fc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b93393a2175293f1410926d9ef3144d3 = $(`<div id="html_b93393a2175293f1410926d9ef3144d3" style="width: 100.0%; height: 100.0%;">Glens Falls, NY</div>`)[0];
+                popup_3d7e83804349e2421a16f3a1077a53fc.setContent(html_b93393a2175293f1410926d9ef3144d3);
+            
+        
+
+        marker_19046db366ca2a91e165b48962e7e487.bindPopup(popup_3d7e83804349e2421a16f3a1077a53fc)
+        ;
+
+        
+    
+    
+                marker_19046db366ca2a91e165b48962e7e487.setIcon(icon_b11591b1938ad6289042b200a3e6206d);
+            
+    
+            var marker_e9fffa1b134c6693acd848e467e378ac = L.marker(
+                [40.8006567, -73.7284647],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_991a4a3ad678af11afe6a012045e770d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_455f485fa28b101984fff6fbf9a2319c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e883941c76e860d094f0f3ad51e786aa = $(`<div id="html_e883941c76e860d094f0f3ad51e786aa" style="width: 100.0%; height: 100.0%;">Great Neck, NY</div>`)[0];
+                popup_455f485fa28b101984fff6fbf9a2319c.setContent(html_e883941c76e860d094f0f3ad51e786aa);
+            
+        
+
+        marker_e9fffa1b134c6693acd848e467e378ac.bindPopup(popup_455f485fa28b101984fff6fbf9a2319c)
+        ;
+
+        
+    
+    
+                marker_e9fffa1b134c6693acd848e467e378ac.setIcon(icon_991a4a3ad678af11afe6a012045e770d);
+            
+    
+            var marker_10c9a268c4ca07ff08eff1232350c5f1 = L.marker(
+                [42.716293, -78.828717],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_112dbf679c49029abbbe408b07cb7796 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ad570c5f75579f076c2c69722020d012 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_29094102b83eb2841db4116c73373389 = $(`<div id="html_29094102b83eb2841db4116c73373389" style="width: 100.0%; height: 100.0%;">Hamburg, NY</div>`)[0];
+                popup_ad570c5f75579f076c2c69722020d012.setContent(html_29094102b83eb2841db4116c73373389);
+            
+        
+
+        marker_10c9a268c4ca07ff08eff1232350c5f1.bindPopup(popup_ad570c5f75579f076c2c69722020d012)
+        ;
+
+        
+    
+    
+                marker_10c9a268c4ca07ff08eff1232350c5f1.setIcon(icon_112dbf679c49029abbbe408b07cb7796);
+            
+    
+            var marker_a134623d1cffe3d40de036c85e0dea7e = L.marker(
+                [40.7695303, -73.5293246],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_8953c94c945b79b764b65803cc3ca139 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_df72b96c932e0b8664596a4cbf50e8f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_757613337edb5a6b191259014f911c8f = $(`<div id="html_757613337edb5a6b191259014f911c8f" style="width: 100.0%; height: 100.0%;">Hicksville, NY</div>`)[0];
+                popup_df72b96c932e0b8664596a4cbf50e8f9.setContent(html_757613337edb5a6b191259014f911c8f);
+            
+        
+
+        marker_a134623d1cffe3d40de036c85e0dea7e.bindPopup(popup_df72b96c932e0b8664596a4cbf50e8f9)
+        ;
+
+        
+    
+    
+                marker_a134623d1cffe3d40de036c85e0dea7e.setIcon(icon_8953c94c945b79b764b65803cc3ca139);
+            
+    
+            var marker_fb026f7438da6ebccaa842539eb35e0e = L.marker(
+                [42.4374175, -76.5483724],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_9134883e027b2deb56eeb568b568116e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cf74511c2fc05a5954b250e5351c9b00 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_732c3d13cfb57f981482ee4fcdffaf0e = $(`<div id="html_732c3d13cfb57f981482ee4fcdffaf0e" style="width: 100.0%; height: 100.0%;">Ithaca, NY</div>`)[0];
+                popup_cf74511c2fc05a5954b250e5351c9b00.setContent(html_732c3d13cfb57f981482ee4fcdffaf0e);
+            
+        
+
+        marker_fb026f7438da6ebccaa842539eb35e0e.bindPopup(popup_cf74511c2fc05a5954b250e5351c9b00)
+        ;
+
+        
+    
+    
+                marker_fb026f7438da6ebccaa842539eb35e0e.setIcon(icon_9134883e027b2deb56eeb568b568116e);
+            
+    
+            var marker_456b7c30b39a446b1f329d5934266f6d = L.marker(
+                [42.0965167, -79.2380322],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_dc4d471c02ea3a839ec8ada442a3db83 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_39bfe5063908a6ca8edc47f3f66e1df8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ada2a91eec2f6a707e14c644832b905f = $(`<div id="html_ada2a91eec2f6a707e14c644832b905f" style="width: 100.0%; height: 100.0%;">Jamestown, NY</div>`)[0];
+                popup_39bfe5063908a6ca8edc47f3f66e1df8.setContent(html_ada2a91eec2f6a707e14c644832b905f);
+            
+        
+
+        marker_456b7c30b39a446b1f329d5934266f6d.bindPopup(popup_39bfe5063908a6ca8edc47f3f66e1df8)
+        ;
+
+        
+    
+    
+                marker_456b7c30b39a446b1f329d5934266f6d.setIcon(icon_dc4d471c02ea3a839ec8ada442a3db83);
+            
+    
+            var marker_2921b4a0a187f4e0cdb9b9b10857b103 = L.marker(
+                [41.2558715, -73.6847453],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_9363c8329153dfdc5c7a87f9ec9c0aa1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2ad9ce1519810e96696517c2df0a112c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8530b80119207888a7e1f593ce5c0e19 = $(`<div id="html_8530b80119207888a7e1f593ce5c0e19" style="width: 100.0%; height: 100.0%;">Katonah, NY</div>`)[0];
+                popup_2ad9ce1519810e96696517c2df0a112c.setContent(html_8530b80119207888a7e1f593ce5c0e19);
+            
+        
+
+        marker_2921b4a0a187f4e0cdb9b9b10857b103.bindPopup(popup_2ad9ce1519810e96696517c2df0a112c)
+        ;
+
+        
+    
+    
+                marker_2921b4a0a187f4e0cdb9b9b10857b103.setIcon(icon_9363c8329153dfdc5c7a87f9ec9c0aa1);
+            
+    
+            var marker_06f427c3ff5724f7b140363793d904d4 = L.marker(
+                [40.8890985, -73.246843],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_abec2efdebf059c902f9f6224cbe70b8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_deefda37192757c5c3ab68e22aa373e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e7d31e57d7624a25b49b7c2fd098b73c = $(`<div id="html_e7d31e57d7624a25b49b7c2fd098b73c" style="width: 100.0%; height: 100.0%;">Kings Park, NY</div>`)[0];
+                popup_deefda37192757c5c3ab68e22aa373e0.setContent(html_e7d31e57d7624a25b49b7c2fd098b73c);
+            
+        
+
+        marker_06f427c3ff5724f7b140363793d904d4.bindPopup(popup_deefda37192757c5c3ab68e22aa373e0)
+        ;
+
+        
+    
+    
+                marker_06f427c3ff5724f7b140363793d904d4.setIcon(icon_abec2efdebf059c902f9f6224cbe70b8);
+            
+    
+            var marker_b137cb49f91d70bec067fd5ab0ec81d3 = L.marker(
+                [44.2831194, -73.9828318],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_30f4bff00881d99c4ca63f9517e69e2d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0b27c609a4ee1a3e7027dc9fd7ca02a8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_33938c49e08d1e3b78615ca4fe1cf147 = $(`<div id="html_33938c49e08d1e3b78615ca4fe1cf147" style="width: 100.0%; height: 100.0%;">Lake Placid, NY</div>`)[0];
+                popup_0b27c609a4ee1a3e7027dc9fd7ca02a8.setContent(html_33938c49e08d1e3b78615ca4fe1cf147);
+            
+        
+
+        marker_b137cb49f91d70bec067fd5ab0ec81d3.bindPopup(popup_0b27c609a4ee1a3e7027dc9fd7ca02a8)
+        ;
+
+        
+    
+    
+                marker_b137cb49f91d70bec067fd5ab0ec81d3.setIcon(icon_30f4bff00881d99c4ca63f9517e69e2d);
+            
+    
+            var marker_f90279fff7e7f4d644d6fe49e981f0fa = L.marker(
+                [42.4840418, -76.4779117],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_3eaa921431debf5bb5bfc0834704a9f5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_be006fb221f15c4f85dffc5303e12891 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1d075f64f897b1a0342b11225af4c9ea = $(`<div id="html_1d075f64f897b1a0342b11225af4c9ea" style="width: 100.0%; height: 100.0%;">Lansing, NY</div>`)[0];
+                popup_be006fb221f15c4f85dffc5303e12891.setContent(html_1d075f64f897b1a0342b11225af4c9ea);
+            
+        
+
+        marker_f90279fff7e7f4d644d6fe49e981f0fa.bindPopup(popup_be006fb221f15c4f85dffc5303e12891)
+        ;
+
+        
+    
+    
+                marker_f90279fff7e7f4d644d6fe49e981f0fa.setIcon(icon_3eaa921431debf5bb5bfc0834704a9f5);
+            
+    
+            var marker_8e6d7bae1909deeb3174f719110f55ec = L.marker(
+                [43.1687104, -78.696567],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_78a57a0a95e795b21dee7735563d8e17 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f6e998f792b9ba5fb6c75bd9468b7d06 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6658b9c3edd396b5e6a6f41918ee7299 = $(`<div id="html_6658b9c3edd396b5e6a6f41918ee7299" style="width: 100.0%; height: 100.0%;">Lockport, NY</div>`)[0];
+                popup_f6e998f792b9ba5fb6c75bd9468b7d06.setContent(html_6658b9c3edd396b5e6a6f41918ee7299);
+            
+        
+
+        marker_8e6d7bae1909deeb3174f719110f55ec.bindPopup(popup_f6e998f792b9ba5fb6c75bd9468b7d06)
+        ;
+
+        
+    
+    
+                marker_8e6d7bae1909deeb3174f719110f55ec.setIcon(icon_78a57a0a95e795b21dee7735563d8e17);
+            
+    
+            var marker_69787f3718df16492f14bf18ce3e7761 = L.marker(
+                [40.8775225, -73.5723052],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_03d6e5727adcfb018a3389f830a7cc3c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ca1b3c69cf50bd6539a5e6cecac3141e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f721203fc93aaa01b75b7b5b1349c00e = $(`<div id="html_f721203fc93aaa01b75b7b5b1349c00e" style="width: 100.0%; height: 100.0%;">Locust Valley, NY</div>`)[0];
+                popup_ca1b3c69cf50bd6539a5e6cecac3141e.setContent(html_f721203fc93aaa01b75b7b5b1349c00e);
+            
+        
+
+        marker_69787f3718df16492f14bf18ce3e7761.bindPopup(popup_ca1b3c69cf50bd6539a5e6cecac3141e)
+        ;
+
+        
+    
+    
+                marker_69787f3718df16492f14bf18ce3e7761.setIcon(icon_03d6e5727adcfb018a3389f830a7cc3c);
+            
+    
+            var marker_22a7b8b75c51e7238ef3eb126f3613e4 = L.marker(
+                [40.5885508, -73.6582631],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_ab9616c2acf9dd2b9b1aa20a8897f21a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f65a1be34071bdce0e9c6c686bc28688 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6b7fc7bd414cee780373ece3f92e950e = $(`<div id="html_6b7fc7bd414cee780373ece3f92e950e" style="width: 100.0%; height: 100.0%;">Long Beach, NY</div>`)[0];
+                popup_f65a1be34071bdce0e9c6c686bc28688.setContent(html_6b7fc7bd414cee780373ece3f92e950e);
+            
+        
+
+        marker_22a7b8b75c51e7238ef3eb126f3613e4.bindPopup(popup_f65a1be34071bdce0e9c6c686bc28688)
+        ;
+
+        
+    
+    
+                marker_22a7b8b75c51e7238ef3eb126f3613e4.setIcon(icon_ab9616c2acf9dd2b9b1aa20a8897f21a);
+            
+    
+            var marker_ccdea69ac8e79b7594c35570af289c30 = L.marker(
+                [44.897714, -75.016022],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_62a15d3861b8d660c91a2fb4086de6b8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8e54e6f42cf5688690d446f0c1c21f5b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_af79545f315fa912405c1ab3175a26c8 = $(`<div id="html_af79545f315fa912405c1ab3175a26c8" style="width: 100.0%; height: 100.0%;">Louisville, NY</div>`)[0];
+                popup_8e54e6f42cf5688690d446f0c1c21f5b.setContent(html_af79545f315fa912405c1ab3175a26c8);
+            
+        
+
+        marker_ccdea69ac8e79b7594c35570af289c30.bindPopup(popup_8e54e6f42cf5688690d446f0c1c21f5b)
+        ;
+
+        
+    
+    
+                marker_ccdea69ac8e79b7594c35570af289c30.setIcon(icon_62a15d3861b8d660c91a2fb4086de6b8);
+            
+    
+            var marker_c028f68c12bf283565dd15f39ba6c9d6 = L.marker(
+                [43.7867132, -75.4921977],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_76acca386feba1d6000d8383de5bd3ee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5c72b5f3d76121f6bdd9bb7306b2a733 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c76b2a60abdc483791f098e88d1bccd0 = $(`<div id="html_c76b2a60abdc483791f098e88d1bccd0" style="width: 100.0%; height: 100.0%;">Lowville, NY</div>`)[0];
+                popup_5c72b5f3d76121f6bdd9bb7306b2a733.setContent(html_c76b2a60abdc483791f098e88d1bccd0);
+            
+        
+
+        marker_c028f68c12bf283565dd15f39ba6c9d6.bindPopup(popup_5c72b5f3d76121f6bdd9bb7306b2a733)
+        ;
+
+        
+    
+    
+                marker_c028f68c12bf283565dd15f39ba6c9d6.setIcon(icon_76acca386feba1d6000d8383de5bd3ee);
+            
+    
+            var marker_df993b9f85b534b206333d947f2cb809 = L.marker(
+                [44.84881, -74.295044],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_a21b46a2e885b8fe7848517fb672b657 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_19f904c628e3416a654fb5fd85e6797c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d75465b183c549579948dfeb3b052f9 = $(`<div id="html_7d75465b183c549579948dfeb3b052f9" style="width: 100.0%; height: 100.0%;">Malone, NY</div>`)[0];
+                popup_19f904c628e3416a654fb5fd85e6797c.setContent(html_7d75465b183c549579948dfeb3b052f9);
+            
+        
+
+        marker_df993b9f85b534b206333d947f2cb809.bindPopup(popup_19f904c628e3416a654fb5fd85e6797c)
+        ;
+
+        
+    
+    
+                marker_df993b9f85b534b206333d947f2cb809.setIcon(icon_a21b46a2e885b8fe7848517fb672b657);
+            
+    
+            var marker_12864834874d6e6cbd4b32d6abe96e7d = L.marker(
+                [40.9487314, -73.7331416],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_50377542d5b2730fc6cb69a884cfa33d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_23340fef841812f0bfb9307e2ca8ad8f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70eaac556ac56715912134de4ed36aa8 = $(`<div id="html_70eaac556ac56715912134de4ed36aa8" style="width: 100.0%; height: 100.0%;">Mamaroneck, NY</div>`)[0];
+                popup_23340fef841812f0bfb9307e2ca8ad8f.setContent(html_70eaac556ac56715912134de4ed36aa8);
+            
+        
+
+        marker_12864834874d6e6cbd4b32d6abe96e7d.bindPopup(popup_23340fef841812f0bfb9307e2ca8ad8f)
+        ;
+
+        
+    
+    
+                marker_12864834874d6e6cbd4b32d6abe96e7d.setIcon(icon_50377542d5b2730fc6cb69a884cfa33d);
+            
+    
+            var marker_3b96cf76b896366529bcae581ecbea6f = L.marker(
+                [40.7579554, -73.9855319],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_a4e3de2697877825b936951d8d7ee20f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b8e4ea7492395d0f869825f879e609e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_691d7c117531f220360da5d849a0bcf2 = $(`<div id="html_691d7c117531f220360da5d849a0bcf2" style="width: 100.0%; height: 100.0%;">Manhattan, NY</div>`)[0];
+                popup_b8e4ea7492395d0f869825f879e609e2.setContent(html_691d7c117531f220360da5d849a0bcf2);
+            
+        
+
+        marker_3b96cf76b896366529bcae581ecbea6f.bindPopup(popup_b8e4ea7492395d0f869825f879e609e2)
+        ;
+
+        
+    
+    
+                marker_3b96cf76b896366529bcae581ecbea6f.setIcon(icon_a4e3de2697877825b936951d8d7ee20f);
+            
+    
+            var marker_2e40c618cbb7d701aa7d3e98fc21e770 = L.marker(
+                [44.9300823, -74.8922422],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_6972d6e7dc62acaab25ae5f13ccfb7be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2613a50479c086249f7ea84facfe91b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2b8289f51ad86c9d952606eff5dd9e80 = $(`<div id="html_2b8289f51ad86c9d952606eff5dd9e80" style="width: 100.0%; height: 100.0%;">Massena, NY</div>`)[0];
+                popup_2613a50479c086249f7ea84facfe91b8.setContent(html_2b8289f51ad86c9d952606eff5dd9e80);
+            
+        
+
+        marker_2e40c618cbb7d701aa7d3e98fc21e770.bindPopup(popup_2613a50479c086249f7ea84facfe91b8)
+        ;
+
+        
+    
+    
+                marker_2e40c618cbb7d701aa7d3e98fc21e770.setIcon(icon_6972d6e7dc62acaab25ae5f13ccfb7be);
+            
+    
+            var marker_4b27c44b2f66ac47ef63e1ee1571b0b7 = L.marker(
+                [41.117991, -74.0594324],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_3a3f059a22136e512e94f2d59629f044 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f9cc4a27f2536f312f9ec3ed54ee50ed = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a40d35d36681f97e50fb637957338832 = $(`<div id="html_a40d35d36681f97e50fb637957338832" style="width: 100.0%; height: 100.0%;">Monsey, NY</div>`)[0];
+                popup_f9cc4a27f2536f312f9ec3ed54ee50ed.setContent(html_a40d35d36681f97e50fb637957338832);
+            
+        
+
+        marker_4b27c44b2f66ac47ef63e1ee1571b0b7.bindPopup(popup_f9cc4a27f2536f312f9ec3ed54ee50ed)
+        ;
+
+        
+    
+    
+                marker_4b27c44b2f66ac47ef63e1ee1571b0b7.setIcon(icon_3a3f059a22136e512e94f2d59629f044);
+            
+    
+            var marker_0ae81c0ed5c10a5351413dccc609a974 = L.marker(
+                [42.8986566, -75.6402204],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_f6c45f8160c66e3ce5d053c1937a989b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c43d8306d2c39c668459553b25c2d82f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_241e72fad1e8e1a2258eaa62f9f7e724 = $(`<div id="html_241e72fad1e8e1a2258eaa62f9f7e724" style="width: 100.0%; height: 100.0%;">Morrisville, NY</div>`)[0];
+                popup_c43d8306d2c39c668459553b25c2d82f.setContent(html_241e72fad1e8e1a2258eaa62f9f7e724);
+            
+        
+
+        marker_0ae81c0ed5c10a5351413dccc609a974.bindPopup(popup_c43d8306d2c39c668459553b25c2d82f)
+        ;
+
+        
+    
+    
+                marker_0ae81c0ed5c10a5351413dccc609a974.setIcon(icon_f6c45f8160c66e3ce5d053c1937a989b);
+            
+    
+            var marker_f7ed39c0f166ec2a99818d5c3e4e4ebc = L.marker(
+                [43.073653, -75.287933],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_9fa91b36eb9f5326062ac09ebbb6b5f2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_78d2d8af56b64cbd252532049274e0ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d016322a12fcbfb3cd113f6f802c075a = $(`<div id="html_d016322a12fcbfb3cd113f6f802c075a" style="width: 100.0%; height: 100.0%;">New Hartford, NY</div>`)[0];
+                popup_78d2d8af56b64cbd252532049274e0ab.setContent(html_d016322a12fcbfb3cd113f6f802c075a);
+            
+        
+
+        marker_f7ed39c0f166ec2a99818d5c3e4e4ebc.bindPopup(popup_78d2d8af56b64cbd252532049274e0ab)
+        ;
+
+        
+    
+    
+                marker_f7ed39c0f166ec2a99818d5c3e4e4ebc.setIcon(icon_9fa91b36eb9f5326062ac09ebbb6b5f2);
+            
+    
+            var marker_57ef253f73d21b9d6e2ac3b2399a904b = L.marker(
+                [40.7352157, -73.6883239],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_e50d2c730291499a7ee8c9e1abb22c25 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_df9eac8fadf11809560ddc68f258e548 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_593f227055234051d8c96398b21e6c9c = $(`<div id="html_593f227055234051d8c96398b21e6c9c" style="width: 100.0%; height: 100.0%;">New Hyde Park, NY</div>`)[0];
+                popup_df9eac8fadf11809560ddc68f258e548.setContent(html_593f227055234051d8c96398b21e6c9c);
+            
+        
+
+        marker_57ef253f73d21b9d6e2ac3b2399a904b.bindPopup(popup_df9eac8fadf11809560ddc68f258e548)
+        ;
+
+        
+    
+    
+                marker_57ef253f73d21b9d6e2ac3b2399a904b.setIcon(icon_e50d2c730291499a7ee8c9e1abb22c25);
+            
+    
+            var marker_ec99be2d6535ba87bab549ebf5ccedd6 = L.marker(
+                [40.9115386, -73.7826363],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_674f8e45d3f568ffc340b1430f24a6c4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0710d4232093e6c72bc1c125a3e4d420 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_49e788c91f82097ef8d2a78f986a55f9 = $(`<div id="html_49e788c91f82097ef8d2a78f986a55f9" style="width: 100.0%; height: 100.0%;">New Rochelle, NY</div>`)[0];
+                popup_0710d4232093e6c72bc1c125a3e4d420.setContent(html_49e788c91f82097ef8d2a78f986a55f9);
+            
+        
+
+        marker_ec99be2d6535ba87bab549ebf5ccedd6.bindPopup(popup_0710d4232093e6c72bc1c125a3e4d420)
+        ;
+
+        
+    
+    
+                marker_ec99be2d6535ba87bab549ebf5ccedd6.setIcon(icon_674f8e45d3f568ffc340b1430f24a6c4);
+            
+    
+            var marker_fdef10f6a65ddc8002c1d0608f2f142c = L.marker(
+                [40.7127281, -74.0060152],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_bc61e151585253534438f70da20572e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_185ce177dfd35d6c74d5c7e14915bb0a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3b22861edb90a6ef4fb04a51313fd88e = $(`<div id="html_3b22861edb90a6ef4fb04a51313fd88e" style="width: 100.0%; height: 100.0%;">New York, NY</div>`)[0];
+                popup_185ce177dfd35d6c74d5c7e14915bb0a.setContent(html_3b22861edb90a6ef4fb04a51313fd88e);
+            
+        
+
+        marker_fdef10f6a65ddc8002c1d0608f2f142c.bindPopup(popup_185ce177dfd35d6c74d5c7e14915bb0a)
+        ;
+
+        
+    
+    
+                marker_fdef10f6a65ddc8002c1d0608f2f142c.setIcon(icon_bc61e151585253534438f70da20572e2);
+            
+    
+            var marker_dcec76d9a9b1e8e16958c06c501547e8 = L.marker(
+                [40.7127281, -74.0060152],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_7a9c2cfe8fecd1bd56e7ab4a846e3cfc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dc7af80939f8130e9c28e31123e2d3bf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_221cbca3f2c841e3ac8aa5608a889bc4 = $(`<div id="html_221cbca3f2c841e3ac8aa5608a889bc4" style="width: 100.0%; height: 100.0%;">New York, NY</div>`)[0];
+                popup_dc7af80939f8130e9c28e31123e2d3bf.setContent(html_221cbca3f2c841e3ac8aa5608a889bc4);
+            
+        
+
+        marker_dcec76d9a9b1e8e16958c06c501547e8.bindPopup(popup_dc7af80939f8130e9c28e31123e2d3bf)
+        ;
+
+        
+    
+    
+                marker_dcec76d9a9b1e8e16958c06c501547e8.setIcon(icon_7a9c2cfe8fecd1bd56e7ab4a846e3cfc);
+            
+    
+            var marker_c60df5272995ab3e54c61871dc348e42 = L.marker(
+                [40.7127281, -74.0060152],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_b1e418ef8d899c19141f464dbc122834 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c8374ba0c0315b717776c06163e484c0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff9af3544ddcf9dc70a49a4a9f40edeb = $(`<div id="html_ff9af3544ddcf9dc70a49a4a9f40edeb" style="width: 100.0%; height: 100.0%;">New York, NY</div>`)[0];
+                popup_c8374ba0c0315b717776c06163e484c0.setContent(html_ff9af3544ddcf9dc70a49a4a9f40edeb);
+            
+        
+
+        marker_c60df5272995ab3e54c61871dc348e42.bindPopup(popup_c8374ba0c0315b717776c06163e484c0)
+        ;
+
+        
+    
+    
+                marker_c60df5272995ab3e54c61871dc348e42.setIcon(icon_b1e418ef8d899c19141f464dbc122834);
+            
+    
+            var marker_3a96959a1eb1c57dcfe103c9031adade = L.marker(
+                [40.7127281, -74.0060152],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_e5f19cece24066b5dc958c11dc5a5721 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eee51e37184b13fbda1a44ca0dc38e11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04d6b93e64ea03b444a960adbfee675c = $(`<div id="html_04d6b93e64ea03b444a960adbfee675c" style="width: 100.0%; height: 100.0%;">New York, NY</div>`)[0];
+                popup_eee51e37184b13fbda1a44ca0dc38e11.setContent(html_04d6b93e64ea03b444a960adbfee675c);
+            
+        
+
+        marker_3a96959a1eb1c57dcfe103c9031adade.bindPopup(popup_eee51e37184b13fbda1a44ca0dc38e11)
+        ;
+
+        
+    
+    
+                marker_3a96959a1eb1c57dcfe103c9031adade.setIcon(icon_e5f19cece24066b5dc958c11dc5a5721);
+            
+    
+            var marker_a5c88695d15e60f16d12ee4559e8b72e = L.marker(
+                [41.5000767, -74.0098299],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_d477d5183fcc5c6c62bb532462b46f85 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4c1e7cf5795eae28cc51ee060cf7429a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c7dea5c67b2fa262fb562b1f9f9c2e0c = $(`<div id="html_c7dea5c67b2fa262fb562b1f9f9c2e0c" style="width: 100.0%; height: 100.0%;">Newburgh, NY</div>`)[0];
+                popup_4c1e7cf5795eae28cc51ee060cf7429a.setContent(html_c7dea5c67b2fa262fb562b1f9f9c2e0c);
+            
+        
+
+        marker_a5c88695d15e60f16d12ee4559e8b72e.bindPopup(popup_4c1e7cf5795eae28cc51ee060cf7429a)
+        ;
+
+        
+    
+    
+                marker_a5c88695d15e60f16d12ee4559e8b72e.setIcon(icon_d477d5183fcc5c6c62bb532462b46f85);
+            
+    
+            var marker_b8c38fe897a8a3bef202fdd5d07f1835 = L.marker(
+                [43.084841, -79.0701786],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_0db13fb3e295c710e05e2b93a1bc0979 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7d8870aaabc9afb2fa9038135278428c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_010668188249cf4646d462655f5fa27c = $(`<div id="html_010668188249cf4646d462655f5fa27c" style="width: 100.0%; height: 100.0%;">Niagara Falls, NY</div>`)[0];
+                popup_7d8870aaabc9afb2fa9038135278428c.setContent(html_010668188249cf4646d462655f5fa27c);
+            
+        
+
+        marker_b8c38fe897a8a3bef202fdd5d07f1835.bindPopup(popup_7d8870aaabc9afb2fa9038135278428c)
+        ;
+
+        
+    
+    
+                marker_b8c38fe897a8a3bef202fdd5d07f1835.setIcon(icon_0db13fb3e295c710e05e2b93a1bc0979);
+            
+    
+            var marker_c8383c621d113474f4a0e70b181bfd95 = L.marker(
+                [43.084841, -79.0701786],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_faed565c02ced8fead5c539ef96558e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_538f5e90afbaa75d58e1db806fc8cca5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a7b5d26e4a54bc411b2eb483d4b7ab58 = $(`<div id="html_a7b5d26e4a54bc411b2eb483d4b7ab58" style="width: 100.0%; height: 100.0%;">Niagara Falls, NY</div>`)[0];
+                popup_538f5e90afbaa75d58e1db806fc8cca5.setContent(html_a7b5d26e4a54bc411b2eb483d4b7ab58);
+            
+        
+
+        marker_c8383c621d113474f4a0e70b181bfd95.bindPopup(popup_538f5e90afbaa75d58e1db806fc8cca5)
+        ;
+
+        
+    
+    
+                marker_c8383c621d113474f4a0e70b181bfd95.setIcon(icon_faed565c02ced8fead5c539ef96558e2);
+            
+    
+            var marker_870e9d772a5e273987767b7616bc9941 = L.marker(
+                [43.0407742, -78.8660527],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_fce4c5b584950b3f4b37a465a0d5624e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_310890b0fb2afefde110828f37be20ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_30ec8a673e55bde9ff0d0aaf80387d9a = $(`<div id="html_30ec8a673e55bde9ff0d0aaf80387d9a" style="width: 100.0%; height: 100.0%;">North Tonawanda, NY</div>`)[0];
+                popup_310890b0fb2afefde110828f37be20ac.setContent(html_30ec8a673e55bde9ff0d0aaf80387d9a);
+            
+        
+
+        marker_870e9d772a5e273987767b7616bc9941.bindPopup(popup_310890b0fb2afefde110828f37be20ac)
+        ;
+
+        
+    
+    
+                marker_870e9d772a5e273987767b7616bc9941.setIcon(icon_fce4c5b584950b3f4b37a465a0d5624e);
+            
+    
+            var marker_7899d1520eb223f0f3d606130d1ecd74 = L.marker(
+                [44.75161, -74.994392],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_53d719dfc84c85a9314a17c0f9b51a79 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4cc35d47e5530360556345033c4dbb2f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_372fc900fafb9e220622781f75537d61 = $(`<div id="html_372fc900fafb9e220622781f75537d61" style="width: 100.0%; height: 100.0%;">Norwood, NY</div>`)[0];
+                popup_4cc35d47e5530360556345033c4dbb2f.setContent(html_372fc900fafb9e220622781f75537d61);
+            
+        
+
+        marker_7899d1520eb223f0f3d606130d1ecd74.bindPopup(popup_4cc35d47e5530360556345033c4dbb2f)
+        ;
+
+        
+    
+    
+                marker_7899d1520eb223f0f3d606130d1ecd74.setIcon(icon_53d719dfc84c85a9314a17c0f9b51a79);
+            
+    
+            var marker_cbd5900eaffa1ea83d4da0be5ef5f73d = L.marker(
+                [44.6975256, -75.4924943],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_ed2c29755c17181019ef66be41baa967 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dcdad75a1fbe0ac3d4e69ec9d101502c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4fbbee040364048b3a36091cec54d107 = $(`<div id="html_4fbbee040364048b3a36091cec54d107" style="width: 100.0%; height: 100.0%;">Ogdensburg, NY</div>`)[0];
+                popup_dcdad75a1fbe0ac3d4e69ec9d101502c.setContent(html_4fbbee040364048b3a36091cec54d107);
+            
+        
+
+        marker_cbd5900eaffa1ea83d4da0be5ef5f73d.bindPopup(popup_dcdad75a1fbe0ac3d4e69ec9d101502c)
+        ;
+
+        
+    
+    
+                marker_cbd5900eaffa1ea83d4da0be5ef5f73d.setIcon(icon_ed2c29755c17181019ef66be41baa967);
+            
+    
+            var marker_340f34c6f27a4c235ec44d0ba7244af5 = L.marker(
+                [42.0775022, -78.4298248],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_2f13e6c643af26b725731efa340366d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b282bcf2e6e2c85dbad7979f2477f69e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc5799b0cded68a7e0a123688033acfb = $(`<div id="html_fc5799b0cded68a7e0a123688033acfb" style="width: 100.0%; height: 100.0%;">Olean, NY</div>`)[0];
+                popup_b282bcf2e6e2c85dbad7979f2477f69e.setContent(html_fc5799b0cded68a7e0a123688033acfb);
+            
+        
+
+        marker_340f34c6f27a4c235ec44d0ba7244af5.bindPopup(popup_b282bcf2e6e2c85dbad7979f2477f69e)
+        ;
+
+        
+    
+    
+                marker_340f34c6f27a4c235ec44d0ba7244af5.setIcon(icon_2f13e6c643af26b725731efa340366d4);
+            
+    
+            var marker_306aa67600bba756ca9e90a8f28a4728 = L.marker(
+                [43.4112973, -76.1279841],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_f26bea4223a3e09f6813c79ddef419a6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d47e6b6ae995f8700c2fee6e189e44b6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c5152c0e49801e007ef294c078a403f5 = $(`<div id="html_c5152c0e49801e007ef294c078a403f5" style="width: 100.0%; height: 100.0%;">Oswego, NY</div>`)[0];
+                popup_d47e6b6ae995f8700c2fee6e189e44b6.setContent(html_c5152c0e49801e007ef294c078a403f5);
+            
+        
+
+        marker_306aa67600bba756ca9e90a8f28a4728.bindPopup(popup_d47e6b6ae995f8700c2fee6e189e44b6)
+        ;
+
+        
+    
+    
+                marker_306aa67600bba756ca9e90a8f28a4728.setIcon(icon_f26bea4223a3e09f6813c79ddef419a6);
+            
+    
+            var marker_c1dfb6bb5c81042a5d8ebf0b89cb7f74 = L.marker(
+                [41.5618381, -73.6026148],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_cbd46d16c0bb4f2f3ddc9ba2667e0b99 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ad9250061f489a1e947bfea7cc5f9dcf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ddf5c7b48ef57d227c1a031bad86827f = $(`<div id="html_ddf5c7b48ef57d227c1a031bad86827f" style="width: 100.0%; height: 100.0%;">Pawling, NY</div>`)[0];
+                popup_ad9250061f489a1e947bfea7cc5f9dcf.setContent(html_ddf5c7b48ef57d227c1a031bad86827f);
+            
+        
+
+        marker_c1dfb6bb5c81042a5d8ebf0b89cb7f74.bindPopup(popup_ad9250061f489a1e947bfea7cc5f9dcf)
+        ;
+
+        
+    
+    
+                marker_c1dfb6bb5c81042a5d8ebf0b89cb7f74.setIcon(icon_cbd46d16c0bb4f2f3ddc9ba2667e0b99);
+            
+    
+            var marker_63a4423150438d84bd06e0e0b60fac75 = L.marker(
+                [41.5618381, -73.6026148],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_9bdc69cd0015372c9071761eeb889eb5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6c0b9109ec02ca033eef379e71b5bcbc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4ea32b3b8954e4d56f455d654a4beb41 = $(`<div id="html_4ea32b3b8954e4d56f455d654a4beb41" style="width: 100.0%; height: 100.0%;">Pawling, NY</div>`)[0];
+                popup_6c0b9109ec02ca033eef379e71b5bcbc.setContent(html_4ea32b3b8954e4d56f455d654a4beb41);
+            
+        
+
+        marker_63a4423150438d84bd06e0e0b60fac75.bindPopup(popup_6c0b9109ec02ca033eef379e71b5bcbc)
+        ;
+
+        
+    
+    
+                marker_63a4423150438d84bd06e0e0b60fac75.setIcon(icon_9bdc69cd0015372c9071761eeb889eb5);
+            
+    
+            var marker_93b809a9dc88db2409b1206c1575cab3 = L.marker(
+                [40.9098215, -73.8079111],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_6e10ec32eaaf42c19380758f15920d3b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9f3e79ba72ba77130f80ee1c1abb9659 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9b998b1b5f36810d76bf514d6fc7c2c5 = $(`<div id="html_9b998b1b5f36810d76bf514d6fc7c2c5" style="width: 100.0%; height: 100.0%;">Pelham, NY</div>`)[0];
+                popup_9f3e79ba72ba77130f80ee1c1abb9659.setContent(html_9b998b1b5f36810d76bf514d6fc7c2c5);
+            
+        
+
+        marker_93b809a9dc88db2409b1206c1575cab3.bindPopup(popup_9f3e79ba72ba77130f80ee1c1abb9659)
+        ;
+
+        
+    
+    
+                marker_93b809a9dc88db2409b1206c1575cab3.setIcon(icon_6e10ec32eaaf42c19380758f15920d3b);
+            
+    
+            var marker_cfd715b9fff75dba923f319955c59125 = L.marker(
+                [44.6960855, -73.4542915],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_25e6b236938995e64df76aa6ec126e43 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_85e17abfd867678cf0a4678973bd1731 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e48c14d41b4782cc265b52c8395bb78 = $(`<div id="html_9e48c14d41b4782cc265b52c8395bb78" style="width: 100.0%; height: 100.0%;">Plattsburgh, NY</div>`)[0];
+                popup_85e17abfd867678cf0a4678973bd1731.setContent(html_9e48c14d41b4782cc265b52c8395bb78);
+            
+        
+
+        marker_cfd715b9fff75dba923f319955c59125.bindPopup(popup_85e17abfd867678cf0a4678973bd1731)
+        ;
+
+        
+    
+    
+                marker_cfd715b9fff75dba923f319955c59125.setIcon(icon_25e6b236938995e64df76aa6ec126e43);
+            
+    
+            var marker_5d112b082a70e5ee53145e1d4d6e9f12 = L.marker(
+                [40.8263965, -73.684993],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_21ced615f5b395b6001a28e010b1520a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_10d9386754c681fadd5a607c416fe876 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e65cec5f64de514ec74242639295cda2 = $(`<div id="html_e65cec5f64de514ec74242639295cda2" style="width: 100.0%; height: 100.0%;">Port Washington, NY</div>`)[0];
+                popup_10d9386754c681fadd5a607c416fe876.setContent(html_e65cec5f64de514ec74242639295cda2);
+            
+        
+
+        marker_5d112b082a70e5ee53145e1d4d6e9f12.bindPopup(popup_10d9386754c681fadd5a607c416fe876)
+        ;
+
+        
+    
+    
+                marker_5d112b082a70e5ee53145e1d4d6e9f12.setIcon(icon_21ced615f5b395b6001a28e010b1520a);
+            
+    
+            var marker_59ddc73ae1fd899555347493cc361fde = L.marker(
+                [44.6697996, -74.9813349],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_df1a40cbbbb128fd5a62f21c3bd3c85f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9e23e24dc9fafd0f279b11e64317878f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_86919aca535bf30f32a9c7d6912739de = $(`<div id="html_86919aca535bf30f32a9c7d6912739de" style="width: 100.0%; height: 100.0%;">Potsdam, NY</div>`)[0];
+                popup_9e23e24dc9fafd0f279b11e64317878f.setContent(html_86919aca535bf30f32a9c7d6912739de);
+            
+        
+
+        marker_59ddc73ae1fd899555347493cc361fde.bindPopup(popup_9e23e24dc9fafd0f279b11e64317878f)
+        ;
+
+        
+    
+    
+                marker_59ddc73ae1fd899555347493cc361fde.setIcon(icon_df1a40cbbbb128fd5a62f21c3bd3c85f);
+            
+    
+            var marker_2622df3214ea3ca92f449c5cacf04fec = L.marker(
+                [43.567014, -76.127703],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_970453a4214a9fd55aaeb198ebf0388e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_652dd4af967892261f1eed4a4291902b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_edfdb6682893ed166629fbf82c87206e = $(`<div id="html_edfdb6682893ed166629fbf82c87206e" style="width: 100.0%; height: 100.0%;">Pulaski, NY</div>`)[0];
+                popup_652dd4af967892261f1eed4a4291902b.setContent(html_edfdb6682893ed166629fbf82c87206e);
+            
+        
+
+        marker_2622df3214ea3ca92f449c5cacf04fec.bindPopup(popup_652dd4af967892261f1eed4a4291902b)
+        ;
+
+        
+    
+    
+                marker_2622df3214ea3ca92f449c5cacf04fec.setIcon(icon_970453a4214a9fd55aaeb198ebf0388e);
+            
+    
+            var marker_1682b7603b473bbf5ea68cfdbd1f5b0c = L.marker(
+                [43.157285, -77.615214],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_195550c0b5c8e6742c68496bed9a6d54 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bfa3a2a779d07fc2eae05be9c3a015b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e9c632dee59ce2cd098d1489a8d36e97 = $(`<div id="html_e9c632dee59ce2cd098d1489a8d36e97" style="width: 100.0%; height: 100.0%;">Rochester, NY</div>`)[0];
+                popup_bfa3a2a779d07fc2eae05be9c3a015b9.setContent(html_e9c632dee59ce2cd098d1489a8d36e97);
+            
+        
+
+        marker_1682b7603b473bbf5ea68cfdbd1f5b0c.bindPopup(popup_bfa3a2a779d07fc2eae05be9c3a015b9)
+        ;
+
+        
+    
+    
+                marker_1682b7603b473bbf5ea68cfdbd1f5b0c.setIcon(icon_195550c0b5c8e6742c68496bed9a6d54);
+            
+    
+            var marker_be6bd6542d80d34a62138793c31a3c5c = L.marker(
+                [43.157285, -77.615214],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_da41536d96770b5e28f38f052569c141 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_66652d87cae7e45c6a5196053a4f4ff4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6a73e0c0d8cd4312687f4b74ae2f285 = $(`<div id="html_d6a73e0c0d8cd4312687f4b74ae2f285" style="width: 100.0%; height: 100.0%;">Rochester, NY</div>`)[0];
+                popup_66652d87cae7e45c6a5196053a4f4ff4.setContent(html_d6a73e0c0d8cd4312687f4b74ae2f285);
+            
+        
+
+        marker_be6bd6542d80d34a62138793c31a3c5c.bindPopup(popup_66652d87cae7e45c6a5196053a4f4ff4)
+        ;
+
+        
+    
+    
+                marker_be6bd6542d80d34a62138793c31a3c5c.setIcon(icon_da41536d96770b5e28f38f052569c141);
+            
+    
+            var marker_949b8158164224ba546644afae2a0ff5 = L.marker(
+                [43.157285, -77.615214],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_b9b59ceb08f31ddc7de1cd3546af4dc6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6846f0b490190adb6ccd979a46fd4993 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1648f7a9b0d7a8278a1ca961b88a8874 = $(`<div id="html_1648f7a9b0d7a8278a1ca961b88a8874" style="width: 100.0%; height: 100.0%;">Rochester, NY</div>`)[0];
+                popup_6846f0b490190adb6ccd979a46fd4993.setContent(html_1648f7a9b0d7a8278a1ca961b88a8874);
+            
+        
+
+        marker_949b8158164224ba546644afae2a0ff5.bindPopup(popup_6846f0b490190adb6ccd979a46fd4993)
+        ;
+
+        
+    
+    
+                marker_949b8158164224ba546644afae2a0ff5.setIcon(icon_b9b59ceb08f31ddc7de1cd3546af4dc6);
+            
+    
+            var marker_d355691db7ced4e24672861ad9f857f9 = L.marker(
+                [43.157285, -77.615214],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_f7db1dfee79deda5b03a94dfed0365d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d3c19a635dc12395cb60d6ec9b8bf9d7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6f92398c4ba6ca9f9287a4a603d5f821 = $(`<div id="html_6f92398c4ba6ca9f9287a4a603d5f821" style="width: 100.0%; height: 100.0%;">Rochester, NY</div>`)[0];
+                popup_d3c19a635dc12395cb60d6ec9b8bf9d7.setContent(html_6f92398c4ba6ca9f9287a4a603d5f821);
+            
+        
+
+        marker_d355691db7ced4e24672861ad9f857f9.bindPopup(popup_d3c19a635dc12395cb60d6ec9b8bf9d7)
+        ;
+
+        
+    
+    
+                marker_d355691db7ced4e24672861ad9f857f9.setIcon(icon_f7db1dfee79deda5b03a94dfed0365d4);
+            
+    
+            var marker_1c6b76f75488e073565ba6097dcd0a9d = L.marker(
+                [43.2102196, -75.4583956],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_cafb7b2164b28532a503eb24ff14816a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_791e0d64cf093963844d1c01ddb28e5b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b662a15d2addb2b32c0e40bcd3ea65b1 = $(`<div id="html_b662a15d2addb2b32c0e40bcd3ea65b1" style="width: 100.0%; height: 100.0%;">Rome, NY</div>`)[0];
+                popup_791e0d64cf093963844d1c01ddb28e5b.setContent(html_b662a15d2addb2b32c0e40bcd3ea65b1);
+            
+        
+
+        marker_1c6b76f75488e073565ba6097dcd0a9d.bindPopup(popup_791e0d64cf093963844d1c01ddb28e5b)
+        ;
+
+        
+    
+    
+                marker_1c6b76f75488e073565ba6097dcd0a9d.setIcon(icon_cafb7b2164b28532a503eb24ff14816a);
+            
+    
+            var marker_32b4b1fe35cbecb1f09ad1c8e0b4b466 = L.marker(
+                [44.9939829, -73.3645221],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_083017dd53b3f639227d9fcbed0d6fb7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_54a9a9ee125e67d738ba069d73fb28d0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3fdcb207b835c4849ba36ed77c78d335 = $(`<div id="html_3fdcb207b835c4849ba36ed77c78d335" style="width: 100.0%; height: 100.0%;">Rouses Point, NY</div>`)[0];
+                popup_54a9a9ee125e67d738ba069d73fb28d0.setContent(html_3fdcb207b835c4849ba36ed77c78d335);
+            
+        
+
+        marker_32b4b1fe35cbecb1f09ad1c8e0b4b466.bindPopup(popup_54a9a9ee125e67d738ba069d73fb28d0)
+        ;
+
+        
+    
+    
+                marker_32b4b1fe35cbecb1f09ad1c8e0b4b466.setIcon(icon_083017dd53b3f639227d9fcbed0d6fb7);
+            
+    
+            var marker_722421818a5ef86231e168e87eb9e8dc = L.marker(
+                [40.9821371, -73.6840902],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_29aa26e1c272e51730c152dfa3929df7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6272f58e3862f94368e188ba331dab20 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_81aafe97a468b6da4deff4d14dcf16d7 = $(`<div id="html_81aafe97a468b6da4deff4d14dcf16d7" style="width: 100.0%; height: 100.0%;">Rye, NY</div>`)[0];
+                popup_6272f58e3862f94368e188ba331dab20.setContent(html_81aafe97a468b6da4deff4d14dcf16d7);
+            
+        
+
+        marker_722421818a5ef86231e168e87eb9e8dc.bindPopup(popup_6272f58e3862f94368e188ba331dab20)
+        ;
+
+        
+    
+    
+                marker_722421818a5ef86231e168e87eb9e8dc.setIcon(icon_29aa26e1c272e51730c152dfa3929df7);
+            
+    
+            var marker_a7c68c84dcb0bd97230a67f85aaa486b = L.marker(
+                [44.3296606, -74.1311198],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_aaf90fab93bf5293ef2479f167142a4a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c014a6ddaff30213607799037cb3d573 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b56daa4db774745e2d09f40b296c648 = $(`<div id="html_0b56daa4db774745e2d09f40b296c648" style="width: 100.0%; height: 100.0%;">Saranac Lake, NY</div>`)[0];
+                popup_c014a6ddaff30213607799037cb3d573.setContent(html_0b56daa4db774745e2d09f40b296c648);
+            
+        
+
+        marker_a7c68c84dcb0bd97230a67f85aaa486b.bindPopup(popup_c014a6ddaff30213607799037cb3d573)
+        ;
+
+        
+    
+    
+                marker_a7c68c84dcb0bd97230a67f85aaa486b.setIcon(icon_aaf90fab93bf5293ef2479f167142a4a);
+            
+    
+            var marker_48fb9515da5b90b6256a989a1f3c8407 = L.marker(
+                [43.0821793, -73.7853915],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_987db7cdf55c850f52bcaf139c149f28 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fcb329f5c1fcf9685cf151f9a44d962c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_42746045550da1ee21fade5c55bd06b6 = $(`<div id="html_42746045550da1ee21fade5c55bd06b6" style="width: 100.0%; height: 100.0%;">Saratoga Springs, NY</div>`)[0];
+                popup_fcb329f5c1fcf9685cf151f9a44d962c.setContent(html_42746045550da1ee21fade5c55bd06b6);
+            
+        
+
+        marker_48fb9515da5b90b6256a989a1f3c8407.bindPopup(popup_fcb329f5c1fcf9685cf151f9a44d962c)
+        ;
+
+        
+    
+    
+                marker_48fb9515da5b90b6256a989a1f3c8407.setIcon(icon_987db7cdf55c850f52bcaf139c149f28);
+            
+    
+            var marker_64042b4f1f47f1d40943f1f675143511 = L.marker(
+                [42.0775906, -73.9529126],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_4814114674212a2f4bbbca22368efb91 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aba668f034d8904b188a3f0489295952 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2c90dbd98ca7101617fe800e60f2141 = $(`<div id="html_f2c90dbd98ca7101617fe800e60f2141" style="width: 100.0%; height: 100.0%;">Saugerties, NY</div>`)[0];
+                popup_aba668f034d8904b188a3f0489295952.setContent(html_f2c90dbd98ca7101617fe800e60f2141);
+            
+        
+
+        marker_64042b4f1f47f1d40943f1f675143511.bindPopup(popup_aba668f034d8904b188a3f0489295952)
+        ;
+
+        
+    
+    
+                marker_64042b4f1f47f1d40943f1f675143511.setIcon(icon_4814114674212a2f4bbbca22368efb91);
+            
+    
+            var marker_d851b29d6a75663f4f23c8b7ee781e8f = L.marker(
+                [40.745349, -73.0885161],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_219f5b7da1318ee2591ddde5b247afa1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e0cda65ecc86540d6717a616bd20d8e4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_614d8e909aff7473a468f3c5986657e8 = $(`<div id="html_614d8e909aff7473a468f3c5986657e8" style="width: 100.0%; height: 100.0%;">Sayville, NY</div>`)[0];
+                popup_e0cda65ecc86540d6717a616bd20d8e4.setContent(html_614d8e909aff7473a468f3c5986657e8);
+            
+        
+
+        marker_d851b29d6a75663f4f23c8b7ee781e8f.bindPopup(popup_e0cda65ecc86540d6717a616bd20d8e4)
+        ;
+
+        
+    
+    
+                marker_d851b29d6a75663f4f23c8b7ee781e8f.setIcon(icon_219f5b7da1318ee2591ddde5b247afa1);
+            
+    
+            var marker_dfb8605d9c0177ba7e1dbc7f6ef9f849 = L.marker(
+                [40.9880495, -73.7974133],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_4aa0d4a00ffa4941afa707cb14afaa73 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d5f56a5e4691d43339946ed339566389 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20d3b2c7b98de279c6d0ec70ed119bbe = $(`<div id="html_20d3b2c7b98de279c6d0ec70ed119bbe" style="width: 100.0%; height: 100.0%;">Scarsdale, NY</div>`)[0];
+                popup_d5f56a5e4691d43339946ed339566389.setContent(html_20d3b2c7b98de279c6d0ec70ed119bbe);
+            
+        
+
+        marker_dfb8605d9c0177ba7e1dbc7f6ef9f849.bindPopup(popup_d5f56a5e4691d43339946ed339566389)
+        ;
+
+        
+    
+    
+                marker_dfb8605d9c0177ba7e1dbc7f6ef9f849.setIcon(icon_4aa0d4a00ffa4941afa707cb14afaa73);
+            
+    
+            var marker_ac2a3a35f7f809f11a8846c0dd27c90c = L.marker(
+                [42.8142432, -73.9395687],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_98fb3f5e3cb899925174e13273199813 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_71b26e97e34518807a9694aa31ef6968 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b201d348adcca52f07176fbf96687fc7 = $(`<div id="html_b201d348adcca52f07176fbf96687fc7" style="width: 100.0%; height: 100.0%;">Schenectady, NY</div>`)[0];
+                popup_71b26e97e34518807a9694aa31ef6968.setContent(html_b201d348adcca52f07176fbf96687fc7);
+            
+        
+
+        marker_ac2a3a35f7f809f11a8846c0dd27c90c.bindPopup(popup_71b26e97e34518807a9694aa31ef6968)
+        ;
+
+        
+    
+    
+                marker_ac2a3a35f7f809f11a8846c0dd27c90c.setIcon(icon_98fb3f5e3cb899925174e13273199813);
+            
+    
+            var marker_c1417162eb6aa7c51f435127229e07be = L.marker(
+                [42.947011, -76.4291017],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_181c3d542827300be164f2b7d13f2a97 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_66962ad47c0b77fad6a5d69332244fc7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_29f63e1a143cbe47b1af8f8486bfe5bb = $(`<div id="html_29f63e1a143cbe47b1af8f8486bfe5bb" style="width: 100.0%; height: 100.0%;">Skaneateles, NY</div>`)[0];
+                popup_66962ad47c0b77fad6a5d69332244fc7.setContent(html_29f63e1a143cbe47b1af8f8486bfe5bb);
+            
+        
+
+        marker_c1417162eb6aa7c51f435127229e07be.bindPopup(popup_66962ad47c0b77fad6a5d69332244fc7)
+        ;
+
+        
+    
+    
+                marker_c1417162eb6aa7c51f435127229e07be.setIcon(icon_181c3d542827300be164f2b7d13f2a97);
+            
+    
+            var marker_9646ea359d66b09b203d55d79f24589a = L.marker(
+                [41.2295386, -73.9870847],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_082c962843be43057cd65f7080269f9a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_47e3f3d8768b2954ca1ffdb0349f14aa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ece8c3b51fb3dd1b798d07272281e723 = $(`<div id="html_ece8c3b51fb3dd1b798d07272281e723" style="width: 100.0%; height: 100.0%;">Stony Point, NY</div>`)[0];
+                popup_47e3f3d8768b2954ca1ffdb0349f14aa.setContent(html_ece8c3b51fb3dd1b798d07272281e723);
+            
+        
+
+        marker_9646ea359d66b09b203d55d79f24589a.bindPopup(popup_47e3f3d8768b2954ca1ffdb0349f14aa)
+        ;
+
+        
+    
+    
+                marker_9646ea359d66b09b203d55d79f24589a.setIcon(icon_082c962843be43057cd65f7080269f9a);
+            
+    
+            var marker_56394880aaafd58f0eedbe5cbd57057a = L.marker(
+                [43.0481221, -76.1474244],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_7d70c22829060d3e81008a31c1a1f550 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_04b607ae136e93f971c60a9efbb3df40 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_26e2103ed106fcd2753d9fdc99a0ba25 = $(`<div id="html_26e2103ed106fcd2753d9fdc99a0ba25" style="width: 100.0%; height: 100.0%;">Syracuse, NY</div>`)[0];
+                popup_04b607ae136e93f971c60a9efbb3df40.setContent(html_26e2103ed106fcd2753d9fdc99a0ba25);
+            
+        
+
+        marker_56394880aaafd58f0eedbe5cbd57057a.bindPopup(popup_04b607ae136e93f971c60a9efbb3df40)
+        ;
+
+        
+    
+    
+                marker_56394880aaafd58f0eedbe5cbd57057a.setIcon(icon_7d70c22829060d3e81008a31c1a1f550);
+            
+    
+            var marker_7ca422a280f18a8e28d12a15cf715db3 = L.marker(
+                [43.0481221, -76.1474244],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_a0683bf955584d0531784ddbe8b58554 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3f5740b31047e0253eef0289c95b24ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ea61470af792524d86ef0e5ac064179d = $(`<div id="html_ea61470af792524d86ef0e5ac064179d" style="width: 100.0%; height: 100.0%;">Syracuse, NY</div>`)[0];
+                popup_3f5740b31047e0253eef0289c95b24ad.setContent(html_ea61470af792524d86ef0e5ac064179d);
+            
+        
+
+        marker_7ca422a280f18a8e28d12a15cf715db3.bindPopup(popup_3f5740b31047e0253eef0289c95b24ad)
+        ;
+
+        
+    
+    
+                marker_7ca422a280f18a8e28d12a15cf715db3.setIcon(icon_a0683bf955584d0531784ddbe8b58554);
+            
+    
+            var marker_1941f1bfdcfe0936785d94505b48de21 = L.marker(
+                [43.0481221, -76.1474244],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_28ff2440dca5eec50c23822d3e474f34 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa00fafec935f17ebe003596db1f3ed0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_03894b5a81c7be7a76142614b7922119 = $(`<div id="html_03894b5a81c7be7a76142614b7922119" style="width: 100.0%; height: 100.0%;">Syracuse, NY</div>`)[0];
+                popup_fa00fafec935f17ebe003596db1f3ed0.setContent(html_03894b5a81c7be7a76142614b7922119);
+            
+        
+
+        marker_1941f1bfdcfe0936785d94505b48de21.bindPopup(popup_fa00fafec935f17ebe003596db1f3ed0)
+        ;
+
+        
+    
+    
+                marker_1941f1bfdcfe0936785d94505b48de21.setIcon(icon_28ff2440dca5eec50c23822d3e474f34);
+            
+    
+            var marker_a1ed54b7b1564c02bc5dece23c80e4b1 = L.marker(
+                [43.020679, -78.878383],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_98433dc4c44f1aed8ec71ce79accc494 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0a5d24a6d27a706fc7a4410907022aff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0eb969e01b3f3ff08b2831f506aae71b = $(`<div id="html_0eb969e01b3f3ff08b2831f506aae71b" style="width: 100.0%; height: 100.0%;">Tonawanda, NY</div>`)[0];
+                popup_0a5d24a6d27a706fc7a4410907022aff.setContent(html_0eb969e01b3f3ff08b2831f506aae71b);
+            
+        
+
+        marker_a1ed54b7b1564c02bc5dece23c80e4b1.bindPopup(popup_0a5d24a6d27a706fc7a4410907022aff)
+        ;
+
+        
+    
+    
+                marker_a1ed54b7b1564c02bc5dece23c80e4b1.setIcon(icon_98433dc4c44f1aed8ec71ce79accc494);
+            
+    
+            var marker_cbce9ef7a68513144c11aed38940be8b = L.marker(
+                [42.7284117, -73.6917878],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_1703ae4331f0f7268c165598d24063e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0437660486a27d5acb592f2ddb5a4149 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8446dc4e795809844116ddb135d946d2 = $(`<div id="html_8446dc4e795809844116ddb135d946d2" style="width: 100.0%; height: 100.0%;">Troy, NY</div>`)[0];
+                popup_0437660486a27d5acb592f2ddb5a4149.setContent(html_8446dc4e795809844116ddb135d946d2);
+            
+        
+
+        marker_cbce9ef7a68513144c11aed38940be8b.bindPopup(popup_0437660486a27d5acb592f2ddb5a4149)
+        ;
+
+        
+    
+    
+                marker_cbce9ef7a68513144c11aed38940be8b.setIcon(icon_1703ae4331f0f7268c165598d24063e2);
+            
+    
+            var marker_6ce65ee57c63ca6e1f4f429df8b7cb8e = L.marker(
+                [44.224044, -74.464302],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_fdc61a961912949613940714688c91df = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c297577496963af3564a39da6d19139 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2e3a2b030258a2aab88e99a3cda72da0 = $(`<div id="html_2e3a2b030258a2aab88e99a3cda72da0" style="width: 100.0%; height: 100.0%;">Tupper Lake, NY</div>`)[0];
+                popup_0c297577496963af3564a39da6d19139.setContent(html_2e3a2b030258a2aab88e99a3cda72da0);
+            
+        
+
+        marker_6ce65ee57c63ca6e1f4f429df8b7cb8e.bindPopup(popup_0c297577496963af3564a39da6d19139)
+        ;
+
+        
+    
+    
+                marker_6ce65ee57c63ca6e1f4f429df8b7cb8e.setIcon(icon_fdc61a961912949613940714688c91df);
+            
+    
+            var marker_be52fe3d0ac45a83824da2947bbfb08f = L.marker(
+                [43.1009031, -75.2326641],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_f2a244d87b7e2a69ed6285a6a497a24f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d192685747e63e6c33fc495282ee8908 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9c70a42c50f4fc00364f61f176d3d73 = $(`<div id="html_b9c70a42c50f4fc00364f61f176d3d73" style="width: 100.0%; height: 100.0%;">Utica, NY</div>`)[0];
+                popup_d192685747e63e6c33fc495282ee8908.setContent(html_b9c70a42c50f4fc00364f61f176d3d73);
+            
+        
+
+        marker_be52fe3d0ac45a83824da2947bbfb08f.bindPopup(popup_d192685747e63e6c33fc495282ee8908)
+        ;
+
+        
+    
+    
+                marker_be52fe3d0ac45a83824da2947bbfb08f.setIcon(icon_f2a244d87b7e2a69ed6285a6a497a24f);
+            
+    
+            var marker_f1a2eaa38a6efdfe29e9feefdd48a10b = L.marker(
+                [43.1009031, -75.2326641],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_3ee6a3e746d2bb1096b3d526295c68bc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9f62426a197c0a3064f20c86da16bbb6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3ec0f5fbd14819528862abf53cbe91d = $(`<div id="html_e3ec0f5fbd14819528862abf53cbe91d" style="width: 100.0%; height: 100.0%;">Utica, NY</div>`)[0];
+                popup_9f62426a197c0a3064f20c86da16bbb6.setContent(html_e3ec0f5fbd14819528862abf53cbe91d);
+            
+        
+
+        marker_f1a2eaa38a6efdfe29e9feefdd48a10b.bindPopup(popup_9f62426a197c0a3064f20c86da16bbb6)
+        ;
+
+        
+    
+    
+                marker_f1a2eaa38a6efdfe29e9feefdd48a10b.setIcon(icon_3ee6a3e746d2bb1096b3d526295c68bc);
+            
+    
+            var marker_5f30518840499da1e1bc3b93a1dd67e4 = L.marker(
+                [40.9446394, -72.8246139],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_32f6b643dc10e3429048a8a7d90a9272 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c24819b1db07ffa54298f25bfacda458 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7eb556086852efedd2b6f629dd92d94f = $(`<div id="html_7eb556086852efedd2b6f629dd92d94f" style="width: 100.0%; height: 100.0%;">Wading River, NY</div>`)[0];
+                popup_c24819b1db07ffa54298f25bfacda458.setContent(html_7eb556086852efedd2b6f629dd92d94f);
+            
+        
+
+        marker_5f30518840499da1e1bc3b93a1dd67e4.bindPopup(popup_c24819b1db07ffa54298f25bfacda458)
+        ;
+
+        
+    
+    
+                marker_5f30518840499da1e1bc3b93a1dd67e4.setIcon(icon_32f6b643dc10e3429048a8a7d90a9272);
+            
+    
+            var marker_da904945398f093dfbda0f39f2992fcc = L.marker(
+                [43.9747838, -75.9107565],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_12ed28a91bcfd2ce2a2b17c440ae01b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0a1307eacb4ebf8536cec947d596103d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8371772f457c347cd70170975336e53b = $(`<div id="html_8371772f457c347cd70170975336e53b" style="width: 100.0%; height: 100.0%;">Watertown, NY</div>`)[0];
+                popup_0a1307eacb4ebf8536cec947d596103d.setContent(html_8371772f457c347cd70170975336e53b);
+            
+        
+
+        marker_da904945398f093dfbda0f39f2992fcc.bindPopup(popup_0a1307eacb4ebf8536cec947d596103d)
+        ;
+
+        
+    
+    
+                marker_da904945398f093dfbda0f39f2992fcc.setIcon(icon_12ed28a91bcfd2ce2a2b17c440ae01b9);
+            
+    
+            var marker_389e6ab101725d9131fd53241b03db2c = L.marker(
+                [43.212285, -77.429994],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_9934d08e3f7a49f3b4467052e52f6288 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_acd00608ebdf7785c24155e13ca20db1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c159484ec81407573bc2e6f9f464274 = $(`<div id="html_9c159484ec81407573bc2e6f9f464274" style="width: 100.0%; height: 100.0%;">Webster, NY</div>`)[0];
+                popup_acd00608ebdf7785c24155e13ca20db1.setContent(html_9c159484ec81407573bc2e6f9f464274);
+            
+        
+
+        marker_389e6ab101725d9131fd53241b03db2c.bindPopup(popup_acd00608ebdf7785c24155e13ca20db1)
+        ;
+
+        
+    
+    
+                marker_389e6ab101725d9131fd53241b03db2c.setIcon(icon_9934d08e3f7a49f3b4467052e52f6288);
+            
+    
+            var marker_ed5a02232d87d693246c276a839a6e27 = L.marker(
+                [41.3926455, -73.9599242],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_32e76166ff15a7037717454a6597288b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ac1d1f455cbc69bd19a06d95ca31a8e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0949813ecff7ff7f608ae46abfdff6c7 = $(`<div id="html_0949813ecff7ff7f608ae46abfdff6c7" style="width: 100.0%; height: 100.0%;">West Point, NY</div>`)[0];
+                popup_ac1d1f455cbc69bd19a06d95ca31a8e3.setContent(html_0949813ecff7ff7f608ae46abfdff6c7);
+            
+        
+
+        marker_ed5a02232d87d693246c276a839a6e27.bindPopup(popup_ac1d1f455cbc69bd19a06d95ca31a8e3)
+        ;
+
+        
+    
+    
+                marker_ed5a02232d87d693246c276a839a6e27.setIcon(icon_32e76166ff15a7037717454a6597288b);
+            
+    
+            var marker_cff15fa7517a5b55e6eb7ddd8bc9bdb0 = L.marker(
+                [42.8395833, -78.7541466],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_734fbf14b9a5cf51b69338b54e8fe1a6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0e27f07d2ed8c061c6a43e1b62f2951e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b38c1e48fae3fbd946c4212a980f1956 = $(`<div id="html_b38c1e48fae3fbd946c4212a980f1956" style="width: 100.0%; height: 100.0%;">West Seneca, NY</div>`)[0];
+                popup_0e27f07d2ed8c061c6a43e1b62f2951e.setContent(html_b38c1e48fae3fbd946c4212a980f1956);
+            
+        
+
+        marker_cff15fa7517a5b55e6eb7ddd8bc9bdb0.bindPopup(popup_0e27f07d2ed8c061c6a43e1b62f2951e)
+        ;
+
+        
+    
+    
+                marker_cff15fa7517a5b55e6eb7ddd8bc9bdb0.setIcon(icon_734fbf14b9a5cf51b69338b54e8fe1a6);
+            
+    
+            var marker_531f0fedd25525aa0c2aab421d082f15 = L.marker(
+                [42.8395833, -78.7541466],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_6639e99e42d49e5948c164c49f41aa73 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_44ef053a9a76f141a1126ae03409ef93 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_30bc011fbf7f6b16daf6cbf249d8e27e = $(`<div id="html_30bc011fbf7f6b16daf6cbf249d8e27e" style="width: 100.0%; height: 100.0%;">West Seneca, NY</div>`)[0];
+                popup_44ef053a9a76f141a1126ae03409ef93.setContent(html_30bc011fbf7f6b16daf6cbf249d8e27e);
+            
+        
+
+        marker_531f0fedd25525aa0c2aab421d082f15.bindPopup(popup_44ef053a9a76f141a1126ae03409ef93)
+        ;
+
+        
+    
+    
+                marker_531f0fedd25525aa0c2aab421d082f15.setIcon(icon_6639e99e42d49e5948c164c49f41aa73);
+            
+    
+            var marker_2cd29a50e72fcb7eb3dbea73b479d7a6 = L.marker(
+                [41.0339862, -73.7629097],
+                {
+}
+            ).addTo(map_790687568a9c4fdeb195dea784d51280);
+        
+    
+            var icon_ac897f6da2623257d8f254a1c4362ecb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c4e553f69a7ebfcdc6aff0239caae0a7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e6f7852535bb49f989f184de9ec7651 = $(`<div id="html_7e6f7852535bb49f989f184de9ec7651" style="width: 100.0%; height: 100.0%;">White Plains, NY</div>`)[0];
+                popup_c4e553f69a7ebfcdc6aff0239caae0a7.setContent(html_7e6f7852535bb49f989f184de9ec7651);
+            
+        
+
+        marker_2cd29a50e72fcb7eb3dbea73b479d7a6.bindPopup(popup_c4e553f69a7ebfcdc6aff0239caae0a7)
+        ;
+
+        
+    
+    
+                marker_2cd29a50e72fcb7eb3dbea73b479d7a6.setIcon(icon_ac897f6da2623257d8f254a1c4362ecb);
+            
+</script>
+</html>

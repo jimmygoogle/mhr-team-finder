@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>MHR Team Finder</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+    <link rel="stylesheet" href="/static/css/mhr.css">
+</head>
+<body>
+
+<table>
+    <tr>
+        <td>
+            <h1>MHR Team Finder</h1>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td style="width:30%">
+            <form id="mhr_filters">
+                <div class="filter-group">
+                    <button type="button" class="filter-toggle" aria-expanded="true">
+                        Regions
+                        <span class="chevron">▾</span>
+                    </button>
+                    <div class="filter-options">
+                        <label><input type="checkbox" name="region" value="AL"> Alabama</label>
+                        <label><input type="checkbox" name="region" value="AK"> Alaska</label>
+                        <label><input type="checkbox" name="region" value="AZ"> Arizona</label>
+                        <label><input type="checkbox" name="region" value="AR"> Arkansas</label>
+                        <label><input type="checkbox" name="region" value="CA"> California</label>
+                        <label><input type="checkbox" name="region" value="CO"> Colorado</label>
+                        <label><input type="checkbox" name="region" value="CT"> Connecticut</label>
+                        <label><input type="checkbox" name="region" value="DE"> Delaware</label>
+                        <label><input type="checkbox" name="region" value="FL"> Florida</label>
+                        <label><input type="checkbox" name="region" value="GA"> Georgia</label>
+                        <label><input type="checkbox" name="region" value="HI"> Hawaii</label>
+                        <label><input type="checkbox" name="region" value="ID"> Idaho</label>
+                        <label><input type="checkbox" name="region" value="IL"> Illinois</label>
+                        <label><input type="checkbox" name="region" value="IN"> Indiana</label>
+                        <label><input type="checkbox" name="region" value="IA"> Iowa</label>
+                        <label><input type="checkbox" name="region" value="KS"> Kansas</label>
+                        <label><input type="checkbox" name="region" value="KY"> Kentucky</label>
+                        <label><input type="checkbox" name="region" value="LA"> Louisiana</label>
+                        <label><input type="checkbox" name="region" value="ME"> Maine</label>
+                        <label><input type="checkbox" name="region" value="MD"> Maryland</label>
+                        <label><input type="checkbox" name="region" value="MA"> Massachusetts</label>
+                        <label><input type="checkbox" name="region" value="MI"> Michigan</label>
+                        <label><input type="checkbox" name="region" value="MN"> Minnesota</label>
+                        <label><input type="checkbox" name="region" value="MS"> Mississippi</label>
+                        <label><input type="checkbox" name="region" value="MO"> Missouri</label>
+                        <label><input type="checkbox" name="region" value="MT"> Montana</label>
+                        <label><input type="checkbox" name="region" value="NE"> Nebraska</label>
+                        <label><input type="checkbox" name="region" value="NV"> Nevada</label>
+                        <label><input type="checkbox" name="region" value="NH"> New Hampshire</label>
+                        <label><input type="checkbox" name="region" value="NJ"> New Jersey</label>
+                        <label><input type="checkbox" name="region" value="NM"> New Mexico</label>
+                        <label><input type="checkbox" name="region" value="NY"> New York</label>
+                        <label><input type="checkbox" name="region" value="NC"> North Carolina</label>
+                        <label><input type="checkbox" name="region" value="ND"> North Dakota</label>
+                        <label><input type="checkbox" name="region" value="OH"> Ohio</label>
+                        <label><input type="checkbox" name="region" value="OK"> Oklahoma</label>
+                        <label><input type="checkbox" name="region" value="OR"> Oregon</label>
+                        <label><input type="checkbox" name="region" value="PA"> Pennsylvania</label>
+                        <label><input type="checkbox" name="region" value="RI"> Rhode Island</label>
+                        <label><input type="checkbox" name="region" value="SC"> South Carolina</label>
+                        <label><input type="checkbox" name="region" value="SD"> South Dakota</label>
+                        <label><input type="checkbox" name="region" value="TN"> Tennessee</label>
+                        <label><input type="checkbox" name="region" value="TX"> Texas</label>
+                        <label><input type="checkbox" name="region" value="UT"> Utah</label>
+                        <label><input type="checkbox" name="region" value="VT"> Vermont</label>
+                        <label><input type="checkbox" name="region" value="VA"> Virginia</label>
+                        <label><input type="checkbox" name="region" value="WA"> Washington</label>
+                        <label><input type="checkbox" name="region" value="WV"> West Virginia</label>
+                        <label><input type="checkbox" name="region" value="WI"> Wisconsin</label>
+                        <label><input type="checkbox" name="region" value="WY"> Wyoming</label>
+                        <label><input type="checkbox" name="region" value="DC"> Washington, DC</label>
+                        <label><input type="checkbox" name="region" value="AB"> Alberta</label>
+                        <label><input type="checkbox" name="region" value="BC"> British Columbia</label>
+                        <label><input type="checkbox" name="region" value="MB"> Manitoba</label>
+                        <label><input type="checkbox" name="region" value="NB"> New Brunswick</label>
+                        <label><input type="checkbox" name="region" value="NL"> Newfoundland</label>
+                        <label><input type="checkbox" name="region" value="NS"> Nova Scotia</label>
+                        <label><input type="checkbox" name="region" value="NT"> Northwest Territories</label>
+                        <label><input type="checkbox" name="region" value="NU"> Nunavut</label>
+                        <label><input type="checkbox" name="region" value="ON"> Ontario</label>
+                        <label><input type="checkbox" name="region" value="PE"> Prince Edward Island</label>
+                        <label><input type="checkbox" name="region" value="QC"> Quebec</label>
+                        <label><input type="checkbox" name="region" value="SK"> Saskatchewan</label>
+                        <label><input type="checkbox" name="region" value="YT"> Yukon</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button type="button" class="filter-toggle" aria-expanded="true">
+                        Ratings
+                        <span class="chevron">▾</span>
+                    </button>
+
+                    <div class="filter-options">
+                        <label>
+                            Min Rating: <input type="number" id="minRating" step="1" min="0" max="100">
+                        </label>
+                        <label>
+                            Max Rating: <input type="number" id="maxRating" step="1" min="0" max="100">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button type="button" class="filter-toggle" aria-expanded="true">
+                        Distance
+                        <span class="chevron">▾</span>
+                    </button>
+
+                    <div class="filter-options">
+                        <input type="range" id="maxMiles" min="10" max="3000" step="10" value="100"/>
+                        <strong>(<span id="milesValue">100</span> miles)</strong>
+                        <a id="default-association-reference" href="#" data-lat="" data-lon="">Reset to default marker</a>
+                    </div>
+
+                    <div id='geolocation-disabled'>
+                        <strong>Geolocation is not turned on.</strong>
+                        <p>While in this mode, use the state filter or increase the miles slider to find other organizations. Then click an association marker and click the 'Set as default organization' link to set a default marker for filtering.</p>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button type="button" class="filter-toggle" aria-expanded="true">
+                        Age Group
+                        <span class="chevron">▾</span>
+                    </button>
+
+                    <div class="filter-options">
+                        <label><input type="checkbox" name="age" value="9U"> 9U</label>
+                        <label><input type="checkbox" name="age" value="10U"> 10U</label>
+                        <label><input type="checkbox" name="age" value="11U"> 11U</label>
+                        <label><input type="checkbox" name="age" value="12U"> 12U</label>
+                        <label><input type="checkbox" name="age" value="13U"> 13U</label>
+                        <label><input type="checkbox" name="age" value="14U"> 14U</label>
+                        <label><input type="checkbox" name="age" value="15U"> 15U</label>
+                        <label><input type="checkbox" name="age" value="16U"> 16U</label>
+                        <label><input type="checkbox" name="age" value="17U"> 17U</label>
+                        <label><input type="checkbox" name="age" value="18U"> 18U</label>
+                        <label><input type="checkbox" name="age" value="19U"> 19U</label>
+                        <label><input type="checkbox" name="age" value="22U"> 22U</label>
+
+                        <label><input type="checkbox" name="age" value="U10"> U10</label>
+                        <label><input type="checkbox" name="age" value="U11"> U11</label>
+                        <label><input type="checkbox" name="age" value="U12"> U12</label>
+                        <label><input type="checkbox" name="age" value="U13"> U13</label>
+                        <label><input type="checkbox" name="age" value="U14"> U14</label>
+                        <label><input type="checkbox" name="age" value="U15"> U15</label>
+                        <label><input type="checkbox" name="age" value="U16"> U16</label>
+                        <label><input type="checkbox" name="age" value="U17"> U17</label>
+                        <label><input type="checkbox" name="age" value="U18"> U18</label>
+                        <label><input type="checkbox" name="age" value="U19"> U19</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button type="button" class="filter-toggle" aria-expanded="true">
+                    Tier
+                    <span class="chevron">▾</span>
+                    </button>
+
+                    <div class="filter-options">
+                        <label><input type="checkbox" name="tier" value="AAA"> AAA</label>
+                        <label><input type="checkbox" name="tier" value="AA"> AA</label>
+                        <label><input type="checkbox" name="tier" value="A"> A</label>
+
+                        <label><input type="checkbox" name="tier" value="A1"> A1</label>
+                        <label><input type="checkbox" name="tier" value="A2"> A2</label>
+                        <label><input type="checkbox" name="tier" value="A3"> A3</label>
+                        <label><input type="checkbox" name="tier" value="A4"> A4</label>
+                        <label><input type="checkbox" name="tier" value="A5"> A5</label>
+                        <label><input type="checkbox" name="tier" value="A6"> A6</label>
+
+                        <label><input type="checkbox" name="tier" value="B"> B</label>
+                        <label><input type="checkbox" name="tier" value="B1"> B1</label>
+                        <label><input type="checkbox" name="tier" value="B2"> B2</label>
+                        <label><input type="checkbox" name="tier" value="B3"> B3</label>
+                        <label><input type="checkbox" name="tier" value="BB"> BB</label>
+
+                        <label><input type="checkbox" name="tier" value="C"> C</label>
+                        <label><input type="checkbox" name="tier" value="C1"> C1</label>
+                        <label><input type="checkbox" name="tier" value="C2"> C2</label>
+                        <label><input type="checkbox" name="tier" value="C3"> C3</label>
+                        <label><input type="checkbox" name="tier" value="C4"> C4</label>
+                        <label><input type="checkbox" name="tier" value="C5"> C5</label>
+
+                        <label><input type="checkbox" name="tier" value="D1"> D1</label>
+                        <label><input type="checkbox" name="tier" value="D2"> D2</label>
+                        <label><input type="checkbox" name="tier" value="D3"> D3</label>
+
+                        <label><input type="checkbox" name="tier" value="1A"> 1A</label>
+                        <label><input type="checkbox" name="tier" value="1B"> 1B</label>
+                        <label><input type="checkbox" name="tier" value="1C"> 1C</label>
+                        <label><input type="checkbox" name="tier" value="1C2"> 1C2</label>
+
+                        <label><input type="checkbox" name="tier" value="2A"> 2A</label>
+                        <label><input type="checkbox" name="tier" value="2B"> 2B</label>
+                        <label><input type="checkbox" name="tier" value="2C"> 2C</label>
+                        <label><input type="checkbox" name="tier" value="2C1"> 2C1</label>
+                        <label><input type="checkbox" name="tier" value="2C2"> 2C2</label>
+
+                        <label><input type="checkbox" name="tier" value="3A"> 3A</label>
+                        <label><input type="checkbox" name="tier" value="3B"> 3B</label>
+                        <label><input type="checkbox" name="tier" value="3C"> 3C</label>
+
+                        <label><input type="checkbox" name="tier" value="4A"> 4A</label>
+                        <label><input type="checkbox" name="tier" value="4B"> 4B</label>
+
+                        <label><input type="checkbox" name="tier" value="EHL"> EHL</label>
+                        <label><input type="checkbox" name="tier" value="Elite"> Elite</label>
+                        <label><input type="checkbox" name="tier" value="Girls"> Girls</label>
+                        <label><input type="checkbox" name="tier" value="HS"> HS</label>
+                        <label><input type="checkbox" name="tier" value="JV"> JV</label>
+                        <label><input type="checkbox" name="tier" value="NCDC"> NCDC</label>
+                        <label><input type="checkbox" name="tier" value="Premier"> Premier</label>
+                        <label><input type="checkbox" name="tier" value="Prep"> Prep</label>
+                        <label><input type="checkbox" name="tier" value="Varsity"> Varsity</label>
+                    </div>
+                </div>
+            </form>
+        </td>
+        <td>
+            <div id="map"></div>
+        </td>
+    </tr>
+</table>
+
+<div id="loader" class="loader hidden">
+  <img src="/static/images/loader.png" alt="Loading">
+</div>
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+<script src="/static/js/mhr.js"></script>
+
+</body>
+</html>
