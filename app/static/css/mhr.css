@@ -62,6 +62,10 @@ a:hover {
     vertical-align: middle;
 }
 
+.mhr_filters {
+    width: 30%;
+}
+
 .filter-group {
     border: 1px solid #e5e7eb;
     border-radius: 8px;
@@ -107,6 +111,7 @@ a:hover {
 
 .filter-group.collapsed .filter-options {
     display: none;
+    width: 100%;
 }
 
 .filter-group.collapsed .chevron {
@@ -115,6 +120,7 @@ a:hover {
 
 .collapsed-rounded {
     border-radius: 10px;
+    width: 265px;
 }
 
 #geolocation-disabled {
@@ -229,4 +235,130 @@ input[type="number"] {
   border: 1px solid var(--primary-color);
   border-radius: 4px;
   color: #333;
+}
+
+input[type="text"] {
+  width: 300px;
+  height: 20px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  color: #333;
+}
+
+.typeahead {
+  position: relative;
+  max-width: 400px;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 250px;
+  overflow-y: auto;
+  width: 300px;
+  display: none;
+}
+
+.search-results.open {
+  display: block;
+  z-index: 9999;
+}
+
+.search-results li {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.search-results li:hover {
+  background: #f2f2f2;
+}
+
+.search-results.hidden {
+  display: none;
+}
+
+.filter-options.active {
+  overflow-y: unset
+}
+
+.mobile-rating {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 1.7em;
+    }
+
+    h1 {
+        font-size: 1.1em;
+    }
+
+    #default-association-reference {
+        font-size: .8em;
+    }
+
+    #milesValue {
+        font-size: .8em;
+    }
+
+    .filter-options label {
+        font-size: .8em;
+    }
+
+    .responsive-table thead {
+        display: none;
+    }
+
+    .responsive-table tr {
+        display: block;
+        padding: 3px;
+    }
+
+    .responsive-table td {
+        display: flex;
+        justify-content: center;
+        border: none;
+        padding: 2px 0;
+    }
+
+    .responsive-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #555;
+    }
+
+    .mhr_filters {
+        width: unset;
+    }
+
+    .filter-group {
+        width: unset;
+    }
+
+    #geolocation-disabled  {
+        text-align: center;
+    }
+
+    #geolocation-mobile {
+        display: block;
+    }
+
+    .mobile-rating {
+        display: block;
+    }
+
+    .non-mobile-rating {
+        display: none;
+    }
 }

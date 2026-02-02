@@ -52,21 +52,22 @@ if (navigator.geolocation) {
             link.dataset.lat = referencePoint.lat;
             link.dataset.lon = referencePoint.lon;
 
-            loadAssociations();
+            loadMHRData();
         },
         (err) => {
             console.warn("Geolocation failed, using default center", err);
-            loadAssociations();
+            loadMHRData();
         }
     );
     } else {
         console.warn("Geolocation not supported, using default center");
-        loadAssociations();
+        loadMHRData();
 }
 
 function getMapCenter() {
     // there is no geolocation enabled so setup the lat/lon and make some UI tweaks
     referencePoint = {lat: DEFAULT_CENTER.lat, lon: DEFAULT_CENTER.lon };
+
     document.getElementById("maxMiles").value = DEFAULT_MILES;
     document.getElementById("milesValue").textContent = DEFAULT_MILES;
     document.getElementById("geolocation-disabled").style.display = "block";
@@ -79,6 +80,10 @@ function getMapCenter() {
 }
 
 function updateMap(geojson) {
+    // clear search boxes
+    document.getElementById("association-search").value = '';
+    document.getElementById("team-search").value = '';
+
     // remove old markers
     markers.forEach(m => m.remove());
     markers = [];
@@ -130,7 +135,7 @@ document.addEventListener('click', (e) => {
   const lon = parseFloat(link.dataset.lon);
 
     referencePoint = { lat, lon };
-    loadAssociations();
+    loadMHRData();
 });
 
 // we are restoring the default reference point (geolocation or user set)
@@ -144,16 +149,11 @@ document.addEventListener('click', (e) => {
   const lon = parseFloat(link.dataset.lon);
 
     referencePoint = { lat, lon };
-    loadAssociations();
+    loadMHRData();
 });
 
-async function loadAssociations() {
-    console.log(referencePoint);
+async function loadMHRData() {
     const { lat, lon } = referencePoint || getMapCenter();
-
-    console.log("lat " + lat);
-    console.log("lon " + lon);
-
     const minRating = document.getElementById("minRating").value;
     const maxRating = document.getElementById("maxRating").value;
     const maxMiles = document.getElementById("maxMiles").value;
@@ -175,13 +175,12 @@ async function loadAssociations() {
     showLoader();
 
     try {
-        const response = await fetch(`/associations?${params}`);
+        const response = await fetch(`/hockey?${params}`);
         const data = await response.json();
 
-        console.log(data);
         updateMap(data);
     } catch (err) {
-        console.error("Error loading associations:", err);
+        console.error("Error loading data:", err);
     }
     finally {
         hideLoader();
@@ -200,7 +199,12 @@ const form = document.getElementById('mhr_filters');
 // change the map when the filters change
 form.addEventListener('change', (e) => {
   const el = e.target;
-  loadAssociations();
+
+    if (el.tagName === "INPUT" && el.type === "text") {
+        return;
+    }
+
+    loadMHRData();
 });
 
 const loader = document.getElementById('loader');
@@ -225,4 +229,90 @@ document.addEventListener('click', (e) => {
     'aria-expanded',
     !group.classList.contains('collapsed')
   );
+});
+
+function debounce(fn, delay = 300) {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => fn(...args), delay);
+  };
+}
+
+const associationInput = document.getElementById("association-search");
+const associationFilterOptions = associationInput.closest(".filter-options");
+const associationResults = document.getElementById("association-results");
+
+associationInput.addEventListener("input", () => {
+    associationFilterOptions.classList.add("active");
+});
+
+const teamInput = document.getElementById("team-search");
+const teamFilterOptions = teamInput.closest(".filter-options");
+const teamResults = document.getElementById("team-results");
+
+teamInput.addEventListener("input", () => {
+    teamFilterOptions.classList.add("active");
+});
+
+async function searchMHRData(query, type) {
+    let results = teamResults;
+    let input = teamInput;
+
+    if (type == 'associations') {
+        results = associationResults;
+        input = associationInput;
+    }
+
+    if (!query || query.length < 2) {
+        results.innerHTML = "";
+        results.classList.add("hidden");
+        return;
+    }
+
+    // show .search-results css
+    results.classList.add("open");
+
+    const resp = await fetch(`/${type}?q=${encodeURIComponent(query)}`);
+    const data = await resp.json();
+
+    results.innerHTML = "";
+
+    if (!data.length) {
+        results.classList.add("hidden");
+        return;
+    }
+
+    data.forEach(d => {
+        const li = document.createElement("li");
+        li.textContent = d.name;
+
+        li.addEventListener("click", () => {
+            input.value = d.name;
+            results.innerHTML = "";
+            results.classList.add("hidden");
+
+            referencePoint = {lat: d.lat, lon: d.lon };
+            loadMHRData();
+        });
+
+        results.appendChild(li);
+    });
+
+    results.classList.remove("hidden");
+}
+
+associationInput.addEventListener("input", debounce(e => searchMHRData(e.target.value, 'associations')));
+teamInput.addEventListener("input", debounce(e => searchMHRData(e.target.value, 'teams')));
+
+associationInput.addEventListener("click", e => {
+    if (!e.target.closest(".typeahead")) {
+        associationResults.classList.add("hidden");
+    }
+});
+
+teamInput.addEventListener("click", e => {
+    if (!e.target.closest(".typeahead")) {
+        teamResults.classList.add("hidden");
+    }
 });

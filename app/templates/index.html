@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MHR Team Finder</title>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
@@ -9,16 +10,58 @@
 </head>
 <body>
 
-<table>
+<table class="responsive-table">
     <tr>
-        <td>
+        <td colspan="2">
             <h1>MHR Team Finder</h1>
         </td>
-        <td></td>
+    </tr>
+    <tr id='geolocation-mobile'>
+        <td colspan="2">
+            <div id='geolocation-disabled'>
+                <strong>Geolocation is not turned on.</strong>
+                <p>While in this mode, use the state filter or increase the miles slider to find other organizations. Then click an association marker and click the 'Set as default organization' link to set a default marker for filtering.</p>
+            </div>
+        </td>
     </tr>
     <tr>
-        <td style="width:30%">
+        <td class="mhr_filters">
             <form id="mhr_filters">
+                <div class="filter-group">
+                    <button type="button" class="filter-toggle" aria-expanded="true">
+                        Association Search
+                        <span class="chevron">▾</span>
+                    </button>
+                    <div class="filter-options">
+                        <div class="typeahead">
+                            <input
+                                type="text"
+                                id="association-search"
+                                placeholder="Search associations…"
+                                autocomplete="off"
+                            />
+                            <ul id="association-results" class="search-results"></ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <button type="button" class="filter-toggle" aria-expanded="true">
+                        Team Search
+                        <span class="chevron">▾</span>
+                    </button>
+                    <div class="filter-options">
+                        <div class="typeahead">
+                            <input
+                                type="text"
+                                id="team-search"
+                                placeholder="Search teams..."
+                                autocomplete="off"
+                            />
+                            <ul id="team-results" class="search-results"></ul>
+                        </div>
+                    </div>
+                </div>
                 <div class="filter-group">
                     <button type="button" class="filter-toggle" aria-expanded="true">
                         Regions
@@ -100,10 +143,10 @@
 
                     <div class="filter-options">
                         <label>
-                            Min Rating: <input type="number" id="minRating" step="1" min="0" max="100">
+                            <span class="mobile-rating">Min:</span><span class="non-mobile-rating">Min Rating:</span> <input type="number" id="minRating" step="1" min="0" max="100">
                         </label>
                         <label>
-                            Max Rating: <input type="number" id="maxRating" step="1" min="0" max="100">
+                            <span class="mobile-rating">Max:</span><span class="non-mobile-rating">Max Rating:</span> <input type="number" id="maxRating" step="1" min="0" max="100">
                         </label>
                     </div>
                 </div>
@@ -118,11 +161,6 @@
                         <input type="range" id="maxMiles" min="10" max="3000" step="10" value="100"/>
                         <strong>(<span id="milesValue">100</span> miles)</strong>
                         <a id="default-association-reference" href="#" data-lat="" data-lon="">Reset to default marker</a>
-                    </div>
-
-                    <div id='geolocation-disabled'>
-                        <strong>Geolocation is not turned on.</strong>
-                        <p>While in this mode, use the state filter or increase the miles slider to find other organizations. Then click an association marker and click the 'Set as default organization' link to set a default marker for filtering.</p>
                     </div>
                 </div>
 
