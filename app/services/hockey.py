@@ -1,7 +1,7 @@
 from app.models import Association, League, TeamLeague, Team, AgeTier, RatingHistory
 from app import db
 
-import ssl, certifi, requests, re, time
+import ssl, certifi, requests, re, time, json
 from bs4 import BeautifulSoup
 from bs4 import NavigableString
 from typing import Tuple, Optional
@@ -400,3 +400,49 @@ def parse_association_data(soup, association):
                 db.session.commit()
 
     #print(teams)
+
+def find_associations(request):
+    q = request.args.get("q", "").strip()
+
+    if not q:
+        return []
+
+    matches = (
+        Association.query
+        .filter(Association.association_name.ilike(f"%{q}%"))
+        .order_by(Association.association_name)
+        .limit(10)
+        .all()
+    )
+
+    return [
+        {
+            "name": a.association_name,
+            "lat": a.latitude,
+            "lon": a.longitude
+        }
+        for a in matches
+    ]
+
+def find_teams(request):
+    q = request.args.get("q", "").strip()
+
+    if not q:
+        return []
+
+    teams = (
+        Team.query
+        .join(Team.association)
+        .filter(Team.team_name.ilike(f"%{q}%"))
+        .limit(20)
+        .all()
+    )
+
+    return [
+        {
+            "name": team.team_name,
+            "lat": team.association.latitude,
+            "lon": team.association.longitude
+        }
+        for team in teams
+    ]
