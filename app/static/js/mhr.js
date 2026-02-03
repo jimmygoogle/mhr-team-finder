@@ -210,33 +210,46 @@ form.addEventListener('change', (e) => {
 const loader = document.getElementById('loader');
 
 function showLoader() {
-  loader.classList.remove('hidden');
+    loader.classList.remove('hidden');
 }
 
 function hideLoader() {
-  loader.classList.add('hidden');
+    loader.classList.add('hidden');
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth <= 768) {
+        document.querySelectorAll('.filter-group').forEach(group => {
+            group.classList.add('collapsed');
+
+            const toggle = group.querySelector('.filter-toggle');
+            if (toggle) {
+                toggle.classList.add('collapsed-rounded');
+            }
+        });
+    }
+});
+
 document.addEventListener('click', (e) => {
-  const filterToggle = e.target.closest('.filter-toggle');
-  if (!filterToggle) return;
+    const filterToggle = e.target.closest('.filter-toggle');
+    if (!filterToggle) return;
 
-  const group = filterToggle.closest('.filter-group');
-  group.classList.toggle('collapsed');
-  filterToggle.classList.toggle('collapsed-rounded');
+    const group = filterToggle.closest('.filter-group');
+    group.classList.toggle('collapsed');
+    filterToggle.classList.toggle('collapsed-rounded');
 
-  filterToggle.setAttribute(
-    'aria-expanded',
-    !group.classList.contains('collapsed')
-  );
+    filterToggle.setAttribute(
+        'aria-expanded',
+        !group.classList.contains('collapsed')
+    );
 });
 
 function debounce(fn, delay = 300) {
-  let timeout;
-  return (...args) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => fn(...args), delay);
-  };
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => fn(...args), delay);
+    };
 }
 
 const associationInput = document.getElementById("association-search");

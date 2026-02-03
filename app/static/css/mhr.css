@@ -120,7 +120,6 @@ a:hover {
 
 .collapsed-rounded {
     border-radius: 10px;
-    width: 265px;
 }
 
 #geolocation-disabled {
@@ -128,6 +127,10 @@ a:hover {
     display: none;
     width: 95%;
     margin: auto;
+}
+
+button {
+    font-size: 1.05em;
 }
 
 input[type=range] {
@@ -304,6 +307,10 @@ input[type="text"] {
         font-size: 1.1em;
     }
 
+    button {
+        font-size: .85em;
+    }
+
     #default-association-reference {
         font-size: .8em;
     }
@@ -360,5 +367,9 @@ input[type="text"] {
 
     .non-mobile-rating {
         display: none;
+    }
+
+    .collapsed-rounded {
+        width: 350px;
     }
 }
