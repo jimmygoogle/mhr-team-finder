@@ -6,7 +6,7 @@
 body {
     margin: 0;
     padding: 0;
-    color: var(--primary-color)
+    color: var(--primary-color);
 }
 
 table {
@@ -125,8 +125,7 @@ a:hover {
 #geolocation-disabled {
     color: var(--accent-color);
     display: none;
-    width: 95%;
-    margin: auto;
+    width: 27%;
 }
 
 button {
@@ -355,10 +354,8 @@ input[type="text"] {
 
     #geolocation-disabled  {
         text-align: center;
-    }
-
-    #geolocation-mobile {
-        display: block;
+        width: 95%;
+        margin: auto;
     }
 
     .mobile-rating {
