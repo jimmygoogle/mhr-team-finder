@@ -79,6 +79,13 @@ function getMapCenter() {
     };
 }
 
+function randomOffset(lat, lon) {
+    const meters = 5000;
+    const deltaLat = (Math.random() - 0.5) * 2 * meters / 111000;
+    const deltaLon = (Math.random() - 0.5) * 2 * meters / (111000 * Math.cos(lat * Math.PI / 180));
+    return [lat + deltaLat, lon + deltaLon];
+}
+
 function updateMap(geojson) {
     // clear search boxes
     document.getElementById("association-search").value = '';
@@ -97,8 +104,19 @@ function updateMap(geojson) {
 
     markers.push(marker);
 
-    geojson.features.forEach(f => {
-        const [lon, lat] = f.geometry.coordinates;
+    let latLonProcessed = {};
+
+    geojson.features.forEach((f, idx) => {
+        let [lon, lat] = f.geometry.coordinates;
+
+        // if we have 2 or more teams in the same town add an offset so the markers show
+        if (lon+lat in latLonProcessed)  {
+            [lat, lon] = randomOffset(lat, lon);
+        }
+        else {
+            latLonProcessed[lon+lat] = 1;
+        }
+
         const { name, mhr_association_url, association_url, teams } = f.properties;
 
         let color = "var(--primary-color)";
