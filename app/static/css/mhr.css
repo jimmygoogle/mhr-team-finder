@@ -308,6 +308,10 @@ input[type="text"] {
         font-size: 1.7em;
     }
 
+    #map {
+        width: 40vw;
+    }
+
     h1 {
         font-size: 1.1em;
     }
