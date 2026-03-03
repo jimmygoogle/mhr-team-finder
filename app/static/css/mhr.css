@@ -9,8 +9,14 @@ body {
     color: var(--primary-color);
 }
 
+.mhr-data {
+  justify-content: center;
+  width: 100%;
+}
+
 table {
     margin: auto;
+    max-width: 100%;
 }
 
 td {
@@ -327,7 +333,7 @@ input[type="text"] {
     }
 
     .responsive-table tr {
-        display: block;
+        display: block; 
         padding: 3px;
     }
 
@@ -336,6 +342,7 @@ input[type="text"] {
         justify-content: center;
         border: none;
         padding: 2px 0;
+        text-align: center;
     }
 
     .responsive-table td::before {
