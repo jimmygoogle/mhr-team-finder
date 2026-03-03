@@ -322,23 +322,23 @@ def parse_association_data(soup, association):
             db.session.commit()
 
             # TODO: fix
-            mhr_rating_week = 19
+            # mhr_rating_week = 19
 
-            rating_history = RatingHistory.query.filter_by(
-                team_id=team.id,
-                mhr_rating_week=mhr_rating_week
-            ).first()
+            # rating_history = RatingHistory.query.filter_by(
+            #     team_id=team.id,
+            #     mhr_rating_week=mhr_rating_week
+            # ).first()
 
-            if not rating_history:
-                # add to rating history
-                rating_history = RatingHistory(
-                    team_id=team.id,
-                    rating=float(rating),
-                    mhr_rating_week=mhr_rating_week
-                )
+            # if not rating_history:
+            #     # add to rating history
+            #     rating_history = RatingHistory(
+            #         team_id=team.id,
+            #         rating=float(rating),
+            #         mhr_rating_week=mhr_rating_week
+            #     )
 
-            db.session.add(rating_history)
-            db.session.commit()
+            # db.session.add(rating_history)
+            # db.session.commit()
         # 
         for league in leagues:
             a = league.find("a", href=True)
