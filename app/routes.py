@@ -7,11 +7,6 @@ main_bp = Blueprint("main", __name__)
 def index():
     return render_template('index.html')
 
-@main_bp.route("/load")
-def load_data():
-    load_association_data()
-    return "'You miss 100 percent of the shots you don't take. — Wayne Gretzky' - Michael Scott"
-
 @main_bp.route("/hockey")
 def get_mhr_data():
     data = get_association_data(request)
