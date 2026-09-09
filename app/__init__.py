@@ -6,15 +6,18 @@ import os
 db = SQLAlchemy()
 migrate = Migrate()
 
-def create_app():
+def create_app(database_uri=None):
     app = Flask(__name__)
 
     # DATABASE_URL from docker-compose env
-    app.config["SQLALCHEMY_DATABASE_URI"] = (
-        f"postgresql://{os.environ['POSTGRES_USER']}:"
-        f"{os.environ['POSTGRES_PASSWORD']}"
-        f"@db:5432/{os.environ['POSTGRES_DB']}"
-    )
+    if database_uri is None:
+        database_uri = (
+            f"postgresql://{os.environ['POSTGRES_USER']}:"
+            f"{os.environ['POSTGRES_PASSWORD']}"
+            f"@db:5432/{os.environ['POSTGRES_DB']}"
+        )
+
+    app.config["SQLALCHEMY_DATABASE_URI"] = database_uri
 
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
