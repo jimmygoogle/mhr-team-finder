@@ -125,17 +125,90 @@ function updateMap(geojson) {
             color = "var(--accent-color)";
         }
 
-        // create marker
+        const popupHTML = 
+        `<center><strong><a href="${mhr_association_url}" target="_blank">${name}</a></strong><br/>` +
+        `(<a href="#" class="association-reference" data-lat="${lat}" data-lon="${lon}">Set as default organization</a>)</center><br/>` +
+        `<strong>Website:</strong><br/><a href="${association_url}" target="_blank">${association_url}</a><br/><br/>` + 
+        `<strong>Teams:</strong><br/>` +
+        (teams ? teams.map(t => `<a href="${t.team_url}" target="_blank">${t.team_name}</a>: ${t.rating} <span class="chart-icon" style="cursor: pointer;" data-mhr-data="${t.mhr_data}" data-team="${t.team_name}">📈</span>`).join("<br/>") : "");
+
+        const popup = new mapboxgl.Popup({ offset: 25, maxWidth: '300px' })
+        .setHTML(popupHTML);
+
         const marker = new mapboxgl.Marker({ color: color })
         .setLngLat([lon, lat])
-        .setPopup(new mapboxgl.Popup({ offset: 25, maxWidth: '300px' }).setHTML(
-            `<center><strong><a href="${mhr_association_url}" target="_blank">${name}</a></strong><br/>` +
-            `(<a href="#" class="association-reference" data-lat="${lat}" data-lon="${lon}">Set as default organization</a>)</center><br/>` +
-            `<strong>Website:</strong><br/><a href="${association_url}" target="_blank">${association_url}</a></br><br/>` + 
-            `<strong>Teams:</strong></br>` +
-            (teams ? teams.map(t => `<a href="${t.team_url}" target="_blank">${t.team_name}</a>: ${t.rating}`).join("</br>") : "")
-        ))
+        .setPopup(popup)
         .addTo(map);
+
+        popup.on('open', () => {
+        const popupElement = popup.getElement();
+        const chartIcons = popupElement.querySelectorAll('.chart-icon');
+
+        chartIcons.forEach(icon => {
+            icon.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents map or parent popup interaction issues
+
+            const teamName = icon.getAttribute('data-team');
+
+            const mhrData = JSON.parse(icon.getAttribute('data-mhr-data'));
+
+            // Unique ID for the canvas element in case multiple popups open
+            const canvasId = `chart-${Date.now()}`;
+
+            // 3. Create the additional chart popup
+            const chartPopup = new mapboxgl.Popup({ offset: 15, closeOnClick: true, maxWidth: '350px' })
+                .setLngLat([lon, lat])
+                .setHTML(`
+                <div style="width: 300px; height: 200px; padding: 5px;">
+                    <strong>MHR history for ${teamName}</strong><br/>
+                    <canvas id="${canvasId}"></canvas>
+                </div>
+                `)
+                .addTo(map);
+
+            // 4. Initialize Chart.js AFTER the popup DOM element is mounted
+            setTimeout(() => {
+                const canvas = document.getElementById(canvasId);
+                if (!canvas) return;
+
+                const ctx = canvas.getContext('2d');
+
+                const xAxisLabels = Array.from({ length: 30 }, (_, i) => i + 1);
+
+                new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: xAxisLabels,
+                    datasets: [{
+                    label: 'Rating',
+                    data: mhrData,
+                    borderColor: '#16468d',
+                    backgroundColor: '#16468d',
+                    borderWidth: 2,
+                    tension: 0.3,
+                    pointRadius: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                    x: {
+                        title: { display: true, text: 'Week' },
+                        ticks: { maxTicksLimit: 10 } // Prevents 30 labels from overcrowding the small popup
+                    },
+                    y: {
+                        min: 0,
+                        max: 100,
+                        title: { display: true, text: 'Rating' }
+                    }
+                    }
+                }
+                });
+            }, 50); // Small delay to guarantee canvas rendering in DOM
+            });
+        });
+        });
 
         const el = marker.getElement();
         markers.push(marker);
