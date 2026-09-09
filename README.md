@@ -8,6 +8,9 @@ This project is based on weekly data from [MyHockeyRankings](https://myhockeyran
 
 You can see a demo [here](http://www.itsawesomebaby.com/mhr)
 
-# Load DB from dump
+Load DB from dump:
+
+```
 scp /Users/jbutler/dump.sql jbutler@192.168.86.130:/tmp/
 docker exec -i mhr-team-finder-db-1 psql -U mhr_user -d postgres < /tmp/dump.sql
+```
