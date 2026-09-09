@@ -2,6 +2,7 @@ from app.models import Association, League, TeamLeague, Team, AgeTier, RatingHis
 from app import db
 
 import ssl, certifi, requests, re, time, json
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from bs4 import NavigableString
 from typing import Tuple, Optional
@@ -11,8 +12,11 @@ from sqlalchemy import func
 from geoalchemy2 import Geography
 from geoalchemy2.functions import ST_DWithin
 from geoalchemy2.shape import to_shape
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 
-gmaps = googlemaps.Client(key='AIzaSyAyXCvdwMlLa_4Om-5wgA-uVtT2uNnW-0k')
+gmaps = googlemaps.Client(key='AIzaSyAAKWgw85-ct8HMa7_qnWAXS9G4EadN2-Q')
 
 AGE_TIER_RE = re.compile(
     r'(?:^|\s)'
@@ -36,9 +40,26 @@ LEAGUE_RE = re.compile(
 
 def to_geojson(results):
     association_data = {}
+    mhr_data = {}
+
+    # loop through ratung - 30 spits
     for row in results:
         team = row.Team
         association = row.Association
+        mhr_data = json.dumps([])
+
+        if row.mhr_rating is not None:
+            mhr_ratings = row.mhr_rating.split(",")
+            mhr_rating_weeks = row.mhr_rating_week.split(",")
+
+            # create a tuple with (week, rating) then turn it into an array
+            # some weeks may be empty until the team gets a rating
+            data = list(zip(mhr_rating_weeks, mhr_ratings))
+
+            items = {int(k) - 1: int(v) for k, v in data}
+            max_idx = max(items.keys())
+
+            mhr_data = json.dumps([items.get(i, None) for i in range(max_idx + 1)])
 
         if association.association_name not in association_data:
             association_data[association.association_name] = []
@@ -46,7 +67,8 @@ def to_geojson(results):
         association_data[association.association_name].append({
             "team_name": team.team_name,
             "rating": team.current_rating,
-            "team_url": f"https://myhockeyrankings.com/team-info?t={team.mhr_team_id}&y=2025"
+            "team_url": f"https://myhockeyrankings.com/team-info?t={team.mhr_team_id}&y=2025",
+            "mhr_data": mhr_data
         })
 
     features = []
@@ -97,9 +119,19 @@ def get_association_data(request):
     tier = request.args.get("tier", None)
 
     query = (
-        Team.query
-        .join(Association)
-        .with_entities(Team, Association)
+        Team.query.join(Association)
+        .outerjoin(RatingHistory)
+        .with_entities(
+            Team,
+            Association,
+            func.string_agg(
+                func.cast(RatingHistory.mhr_rating_week, db.String), ","
+            ).label("mhr_rating_week"),
+            func.string_agg(
+                func.cast(RatingHistory.rating, db.String), ","
+            ).label("mhr_rating")
+        )
+        .group_by(Team.id, Association.id)
     )
 
     if age != "":
@@ -148,6 +180,13 @@ def get_association_data(request):
     return to_geojson(results)
 
 def load_association_data():
+    options = Options()
+    options.add_experimental_option(
+        "prefs",
+        {"profile.default_content_setting_values.javascript": 2} # 1 = Allow, 2 = Block
+    )
+
+    driver = webdriver.Chrome(options=options)
     for state in [
         "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA",
         "HI","ID","IL","IN","IA","KS","KY","LA","ME","MD",
@@ -159,10 +198,10 @@ def load_association_data():
     ]:
         # get associations in the state/province
         url = f"https://myhockeyrankings.com/associations/{state}"
-        response = requests.get(url, timeout=10)
+        driver.get(url)
 
-        soup = BeautifulSoup(response.text, 'html.parser')
-  
+        soup = BeautifulSoup(driver.page_source, 'html.parser')
+
         for a in soup.find_all("a", href=re.compile(r"association-info")):
             href = a.get("href")
             name = a.find("p").get_text(strip=True)
@@ -208,9 +247,9 @@ def load_association_data():
             # get details about association (teams, etc)
             url = f"https://myhockeyrankings.com/association-info?a={association_id}"
 
-            response = requests.get(url, timeout=10)
+            driver.get(url)
 
-            soup = BeautifulSoup(response.text, 'html.parser')
+            soup = BeautifulSoup(driver.page_source, 'html.parser')
             parse_association_data(soup, association)
 
         # sleep a bit so we dont bring too much attention to ourselves :)
@@ -249,11 +288,18 @@ def parse_association_data(soup, association):
     teams = []
 
     # get association url
-    url = soup.select_one("#social_links a")["href"]
+    if soup.select_one("#social_links a"):
+        url = soup.select_one("#social_links a")["href"]
+    else:
+        url = ''
 
     # get association status
     status_strong = soup.find("strong", string="Status:")
-    status = status_strong.next_sibling.strip()
+
+    if status_strong:
+        status = status_strong.next_sibling.strip()
+    else:
+        status = 'unknown'
 
     # add association data
     association.status = status
@@ -321,24 +367,25 @@ def parse_association_data(soup, association):
             db.session.add(team)
             db.session.commit()
 
-            # TODO: fix
-            # mhr_rating_week = 19
+            mhr_rating_week = get_mhr_week()
 
-            # rating_history = RatingHistory.query.filter_by(
-            #     team_id=team.id,
-            #     mhr_rating_week=mhr_rating_week
-            # ).first()
+            # add ranking to history
+            if mhr_rating_week > 0:
+                rating_history = RatingHistory.query.filter_by(
+                    team_id=team.id,
+                    mhr_rating_week=mhr_rating_week
+                ).first()
 
-            # if not rating_history:
-            #     # add to rating history
-            #     rating_history = RatingHistory(
-            #         team_id=team.id,
-            #         rating=float(rating),
-            #         mhr_rating_week=mhr_rating_week
-            #     )
+                if not rating_history:
+                    # add to rating history
+                    rating_history = RatingHistory(
+                        team_id=team.id,
+                        rating=float(rating),
+                        mhr_rating_week=mhr_rating_week
+                    )
 
-            # db.session.add(rating_history)
-            # db.session.commit()
+                db.session.add(rating_history)
+                db.session.commit()
         # 
         for league in leagues:
             a = league.find("a", href=True)
@@ -400,6 +447,30 @@ def parse_association_data(soup, association):
                 db.session.commit()
 
     #print(teams)
+
+def get_mhr_week(target_date=None):
+    if target_date is None:
+        target_date = datetime.now()
+
+    # 1. Determine the start year of the current season
+    # If month is Sept or later, season started this year; otherwise, it started last year
+    if target_date.month >= 9:
+        start_year = target_date.year
+    else:
+        start_year = target_date.year - 1
+
+    # 2. Set Week 1 Start Date (September 30th)
+    week_1_start = datetime(start_year, 9, 30)
+
+    # 3. Handle pre-season dates (before Sept 30)
+    if target_date < week_1_start:
+        return 0  # Pre-season / Week 0
+
+    # 4. Calculate days passed and determine week number
+    days_elapsed = (target_date - week_1_start).days
+    week_number = (days_elapsed // 7) + 1
+
+    return week_number
 
 def find_associations(request):
     q = request.args.get("q", "").strip()
