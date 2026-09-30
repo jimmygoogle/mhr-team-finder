@@ -67,7 +67,7 @@ def to_geojson(results):
         association_data[association.association_name].append({
             "team_name": team.team_name,
             "rating": team.current_rating,
-            "team_url": f"https://myhockeyrankings.com/team-info?t={team.mhr_team_id}&y=2025",
+            "team_url": f"https://myhockeyrankings.com/team-info?t={team.mhr_team_id}&y=2026",
             "mhr_data": mhr_data
         })
 
