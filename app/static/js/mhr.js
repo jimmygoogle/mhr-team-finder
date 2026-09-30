@@ -37,26 +37,53 @@ if (navigator.geolocation) {
                 lon: position.coords.longitude
             };
 
-            // center map on user
-            //map.setCenter([referencePoint.lon, referencePoint.lat]);
-            map.setZoom(7);
+            try {
+                map.setZoom(7);
 
-            const marker = new mapboxgl.Marker({ color: "var(--primary-color)" })
-                .setLngLat([referencePoint.lon, referencePoint.lat])
-                .addTo(map);
+                const marker = new mapboxgl.Marker({
+                    color: "var(--primary-color)"
+                })
+                    .setLngLat([
+                        referencePoint.lon,
+                        referencePoint.lat
+                    ])
+                    .addTo(map);
 
-            markers.push(marker);
+                markers.push(marker);
 
-            // set default reset (this can be changed)
-            const link = document.getElementById('default-association-reference');
-            link.dataset.lat = referencePoint.lat;
-            link.dataset.lon = referencePoint.lon;
+                const link = document.getElementById(
+                    "default-association-reference"
+                );
+
+                if (link) {
+                    link.dataset.lat = referencePoint.lat;
+                    link.dataset.lon = referencePoint.lon;
+                } else {
+                    console.warn("#default-association-reference not found");
+                }
+
+                loadMHRData();
+
+            } catch (e) {
+                console.error("ERROR AFTER GEOLOCATION:", e);
+            }
+        },
+
+        (err) => {
+            console.error(
+                "GEOLOCATION FAILED:",
+                err.code,
+                err.message,
+                err
+            );
 
             loadMHRData();
         },
-        (err) => {
-            console.warn("Geolocation failed, using default center", err);
-            loadMHRData();
+
+        {
+            enableHighAccuracy: true,
+            timeout: 15000,
+            maximumAge: 0
         }
     );
     } else {
