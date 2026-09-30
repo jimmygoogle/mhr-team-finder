@@ -55,8 +55,7 @@ def to_geojson(results):
             # create a tuple with (week, rating) then turn it into an array
             # some weeks may be empty until the team gets a rating
             data = list(zip(mhr_rating_weeks, mhr_ratings))
-
-            items = {int(k) - 1: v for k, v in data}
+            items = {int(k) - 1: float(v) for k, v in data}
             max_idx = max(items.keys())
 
             mhr_data = json.dumps([items.get(i, None) for i in range(max_idx + 1)])
