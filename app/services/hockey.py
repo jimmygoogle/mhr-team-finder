@@ -185,7 +185,12 @@ def load_association_data():
         {"profile.default_content_setting_values.javascript": 2} # 1 = Allow, 2 = Block
     )
 
+    # get current MHR week
+    mhr_rating_week = get_mhr_week()
+
     driver = webdriver.Chrome(options=options)
+
+    # loop through each state and get each association
     for state in [
         "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA",
         "HI","ID","IL","IN","IA","KS","KY","LA","ME","MD",
@@ -195,64 +200,78 @@ def load_association_data():
         "DC","AB","BC","MB","NB","NL", "NS","NT","NU","ON",
         "PE","QC","SK","YT"
     ]:
-        # get associations in the state/province
-        url = f"https://myhockeyrankings.com/associations/{state}"
-        driver.get(url)
+        print('*' * 20)
+        print(f"Working with {state}")
+        print('*' * 20)
 
-        soup = BeautifulSoup(driver.page_source, 'html.parser')
-
-        for a in soup.find_all("a", href=re.compile(r"association-info")):
-            href = a.get("href")
-            name = a.find("p").get_text(strip=True)
-
-            # get city/state|province from location
-            location = a.find_all("p")[1].get_text(strip=True)
-            clean = re.sub(r"\s*\|\s*Girls Only\s*$", "", location)
-
-            location_parts = clean.split(',')
-            city = location_parts[0].strip()
-            state = location_parts[1].strip()
-
-            # get association id from url
-            parsed = urlparse(href)
-            params = parse_qs(parsed.query)
-            association_id = int(params["a"][0])
-
-            print('=' * 20)
-            print(f"'{association_id}' : '{name}' : '{city}' : '{state}'")
-            print('=' * 20)
-
-            association = Association.query.filter_by(association_name=name).first()
-
-            if not association:
-                association = Association(
-                    association_name=name,
-                    city=city,
-                    state=state,
-                    mhr_association_id=association_id
-                )
-
-                # get lat/long of the association (only one time)
-                geocode_result = gmaps.geocode(f"{city}, {state}")
-
-                if geocode_result:
-                    location = geocode_result[0]["geometry"]["location"]
-                    association.set_location(location["lat"], location["lng"])
-
-                db.session.add(association)
-                db.session.commit()
-                time.sleep(2)
-
-            # get details about association (teams, etc)
-            url = f"https://myhockeyrankings.com/association-info?a={association_id}"
-
+        for page in range(1,5):
+            # get associations in the state/province
+            url = f"https://myhockeyrankings.com/associations/{state}/{page}"
             driver.get(url)
 
-            soup = BeautifulSoup(driver.page_source, 'html.parser')
-            parse_association_data(soup, association)
+            # stop of we have paginated too far (hacky)
+            if 'No associations found' in driver.page_source:
+                break
 
-        # sleep a bit so we dont bring too much attention to ourselves :)
-        time.sleep(5)
+            # print('*' * 40)
+            # print(f"Working with page {page} for {state}")
+            # print('*' * 40)
+
+            soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+            for a in soup.find_all("a", href=re.compile(r"association-info")):
+                href = a.get("href")
+                name = a.find("p").get_text(strip=True)
+
+                # get city/state|province from location
+                location = a.find_all("p")[1].get_text(strip=True)
+                clean = re.sub(r"\s*\|\s*Girls Only\s*$", "", location)
+
+                location_parts = clean.split(',')
+                city = location_parts[0].strip()
+                state = location_parts[1].strip()
+
+                # get association id from url
+                parsed = urlparse(href)
+                params = parse_qs(parsed.query)
+                association_id = int(params["a"][0])
+
+                print(f"{name} ({association_id}) in {city}, {state}")
+
+                association = Association.query.filter_by(association_name=name).first()
+
+                if not association:
+                    print(f"Adding new association: {name}")
+
+                    association = Association(
+                        association_name=name,
+                        city=city,
+                        state=state,
+                        mhr_association_id=association_id
+                    )
+
+                    # get lat/long of the association (only one time)
+                    geocode_result = gmaps.geocode(f"{city}, {state}")
+
+                    if geocode_result:
+                        location = geocode_result[0]["geometry"]["location"]
+                        association.set_location(location["lat"], location["lng"])
+
+                    db.session.add(association)
+                    db.session.commit()
+                    time.sleep(2)
+
+                # get details about association (teams, etc)
+                url = f"https://myhockeyrankings.com/association-info?a={association_id}"
+
+                driver.get(url)
+
+                soup = BeautifulSoup(driver.page_source, 'html.parser')
+                parse_association_data(soup, association, mhr_rating_week)
+                time.sleep(.5)
+
+        # sleep a bit so we dont bring too much attention to ourselves :) [whatever]
+        time.sleep(1)
 
 def parse_team(name):
     age = tier = league = gender = ""
@@ -283,7 +302,7 @@ def parse_team(name):
 
     return age, level
 
-def parse_association_data(soup, association):
+def parse_association_data(soup, association, mhr_rating_week):
     teams = []
 
     # get association url
@@ -321,7 +340,7 @@ def parse_association_data(soup, association):
 
         age, tier = parse_team(team_name)
 
-        print(f"'{team_name}' : '{age}' : '{tier}'")
+        #print(f"'{team_name}' : '{age}' : '{tier}'")
 
         age_tier = AgeTier.query.filter_by(
             age=age,
@@ -365,8 +384,6 @@ def parse_association_data(soup, association):
             team.current_rating = current_rating
             db.session.add(team)
             db.session.commit()
-
-            mhr_rating_week = get_mhr_week()
 
             # add ranking to history
             if mhr_rating_week > 0:
