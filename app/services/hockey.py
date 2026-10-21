@@ -192,9 +192,11 @@ def load_association_data():
 
     # get current MHR week
     mhr_rating_week = get_mhr_week()
+    print(f"Working MHR week is {mhr_rating_week}")
 
     # get cached MHR week
     cached_mhr_week = r.get('mhr_week')
+    print(f"Cached MHR week is {cached_mhr_week}")
 
     association_key = 'association'
     state_key = 'state'
@@ -204,7 +206,7 @@ def load_association_data():
         r.set('mhr_week', mhr_rating_week)
     else:
         # its a new week so clear our caches
-        if cached_mhr_week != mhr_rating_week:
+        if int(cached_mhr_week) != int(mhr_rating_week):
             print('Clearing caches ...')
             r.delete(association_key)
             r.delete(state_key)
