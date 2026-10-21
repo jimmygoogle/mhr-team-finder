@@ -188,14 +188,28 @@ def load_association_data():
         {"profile.default_content_setting_values.javascript": 2} # 1 = Allow, 2 = Block
     )
 
+    r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+
     # get current MHR week
     mhr_rating_week = get_mhr_week()
 
-    r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+    # get cached MHR week
+    cached_mhr_week = r.get('mhr_week')
 
     association_key = 'association'
     state_key = 'state'
 
+    if cached_mhr_week is None:
+        print(f"Setting MHR week: {mhr_rating_week}")
+        r.set('mhr_week', mhr_rating_week)
+    else:
+        # its a new week so clear our caches
+        if cached_mhr_week != mhr_rating_week:
+            print('Clearing caches ...')
+            r.delete(association_key)
+            r.delete(state_key)
+
+    # get our last processed association data
     raw_data = r.get(association_key)
 
     if raw_data is None:
@@ -203,6 +217,7 @@ def load_association_data():
     else:
         processed_associations = json.loads(raw_data)
 
+    # get our last processed states
     raw_data = r.get(state_key)
 
     if raw_data is None:
