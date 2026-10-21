@@ -1,7 +1,7 @@
 from app.models import Association, League, TeamLeague, Team, AgeTier, RatingHistory
 from app import db
 
-import ssl, certifi, requests, re, time, json
+import ssl, certifi, requests, re, time, json, redis, os
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from bs4 import NavigableString
@@ -15,8 +15,11 @@ from geoalchemy2.shape import to_shape
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from dotenv import load_dotenv
 
-gmaps = googlemaps.Client(key='AIzaSyAAKWgw85-ct8HMa7_qnWAXS9G4EadN2-Q')
+load_dotenv()
+
+gmaps = googlemaps.Client(key=os.environ['GOOGLE_MAPS_API_KEY'])
 
 AGE_TIER_RE = re.compile(
     r'(?:^|\s)'
@@ -188,7 +191,24 @@ def load_association_data():
     # get current MHR week
     mhr_rating_week = get_mhr_week()
 
-    driver = webdriver.Chrome(options=options)
+    r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+
+    association_key = 'association'
+    state_key = 'state'
+
+    raw_data = r.get(association_key)
+
+    if raw_data is None:
+        processed_associations = {}
+    else:
+        processed_associations = json.loads(raw_data)
+
+    raw_data = r.get(state_key)
+
+    if raw_data is None:
+        processed_states = {}
+    else:
+        processed_states = json.loads(raw_data)
 
     # loop through each state and get each association
     for state in [
@@ -200,78 +220,100 @@ def load_association_data():
         "DC","AB","BC","MB","NB","NL", "NS","NT","NU","ON",
         "PE","QC","SK","YT"
     ]:
-        print('*' * 20)
-        print(f"Working with {state}")
-        print('*' * 20)
+        if state in processed_states:
+            print('*' * 20)
+            print(f"Already processed {state}")
+            print('*' * 20)
+            continue
+        else:
+            print('*' * 20)
+            print(f"Working with {state}")
+            print('*' * 20)
 
-        for page in range(1,5):
-            # get associations in the state/province
-            url = f"https://myhockeyrankings.com/associations/{state}/{page}"
-            driver.get(url)
-
-            # stop of we have paginated too far (hacky)
-            if 'No associations found' in driver.page_source:
-                break
-
-            # print('*' * 40)
-            # print(f"Working with page {page} for {state}")
-            # print('*' * 40)
-
-            soup = BeautifulSoup(driver.page_source, 'html.parser')
-
-            for a in soup.find_all("a", href=re.compile(r"association-info")):
-                href = a.get("href")
-                name = a.find("p").get_text(strip=True)
-
-                # get city/state|province from location
-                location = a.find_all("p")[1].get_text(strip=True)
-                clean = re.sub(r"\s*\|\s*Girls Only\s*$", "", location)
-
-                location_parts = clean.split(',')
-                city = location_parts[0].strip()
-                state = location_parts[1].strip()
-
-                # get association id from url
-                parsed = urlparse(href)
-                params = parse_qs(parsed.query)
-                association_id = int(params["a"][0])
-
-                print(f"{name} ({association_id}) in {city}, {state}")
-
-                association = Association.query.filter_by(association_name=name).first()
-
-                if not association:
-                    print(f"Adding new association: {name}")
-
-                    association = Association(
-                        association_name=name,
-                        city=city,
-                        state=state,
-                        mhr_association_id=association_id
-                    )
-
-                    # get lat/long of the association (only one time)
-                    geocode_result = gmaps.geocode(f"{city}, {state}")
-
-                    if geocode_result:
-                        location = geocode_result[0]["geometry"]["location"]
-                        association.set_location(location["lat"], location["lng"])
-
-                    db.session.add(association)
-                    db.session.commit()
-                    time.sleep(2)
-
-                # get details about association (teams, etc)
-                url = f"https://myhockeyrankings.com/association-info?a={association_id}"
-
+        with webdriver.Chrome(options=options) as driver:
+            for page in range(1,5):
+                # get associations in the state/province
+                url = f"https://myhockeyrankings.com/associations/{state}/{page}"
                 driver.get(url)
 
+                if 'Forbidden' in driver.page_source:
+                    print(f"Stopping with {state} because of 403. We will need to restart.")
+                    print(driver.page_source)
+                    exit()
+
+                # stop of we have paginated too far (hacky)
+                if 'No associations found' in driver.page_source:
+                    break
+
                 soup = BeautifulSoup(driver.page_source, 'html.parser')
-                parse_association_data(soup, association, mhr_rating_week)
-                time.sleep(.5)
+
+                for a in soup.find_all("a", href=re.compile(r"association-info")):
+                    href = a.get("href")
+                    name = a.find("p").get_text(strip=True)
+
+                    # skip this association that we already processed
+                    if name in processed_associations:
+                        print(f"Skipping {name}")
+                        continue
+
+                    # get city/state|province from location
+                    location = a.find_all("p")[1].get_text(strip=True)
+                    clean = re.sub(r"\s*\|\s*Girls Only\s*$", "", location)
+
+                    location_parts = clean.split(',')
+                    city = location_parts[0].strip()
+                    state = location_parts[1].strip()
+
+                    # get association id from url
+                    parsed = urlparse(href)
+                    params = parse_qs(parsed.query)
+                    association_id = int(params["a"][0])
+
+                    print(f"{name} ({association_id}) in {city}, {state}")
+
+                    association = Association.query.filter_by(association_name=name).first()
+
+                    if not association:
+                        print(f"Adding new association: {name}")
+
+                        association = Association(
+                            association_name=name,
+                            city=city,
+                            state=state,
+                            mhr_association_id=association_id
+                        )
+
+                        # get lat/long of the association (only one time)
+                        geocode_result = gmaps.geocode(f"{city}, {state}")
+
+                        if geocode_result:
+                            location = geocode_result[0]["geometry"]["location"]
+                            association.set_location(location["lat"], location["lng"])
+
+                        db.session.add(association)
+                        db.session.commit()
+                        time.sleep(2)
+
+                    # get details about association (teams, etc)
+                    url = f"https://myhockeyrankings.com/association-info?a={association_id}"
+
+                    driver.get(url)
+
+                    soup = BeautifulSoup(driver.page_source, 'html.parser')
+                    parse_association_data(soup, association, mhr_rating_week)
+
+                    # keep track of the last association we completed
+                    processed_associations[name] = 1
+                    r.set(association_key, json.dumps(processed_associations))
+
+                    time.sleep(.5)
+
+        # keep track of the last state we completed
+        processed_states[state] = 1
+        r.set(state_key, json.dumps(processed_states))
 
         # sleep a bit so we dont bring too much attention to ourselves :) [whatever]
-        time.sleep(1)
+        time.sleep(20)
 
 def parse_team(name):
     age = tier = league = gender = ""
