@@ -211,6 +211,9 @@ def load_association_data():
             r.delete(association_key)
             r.delete(state_key)
 
+            # set new week
+            r.set('mhr_week', mhr_rating_week)
+
     # get our last processed association data
     raw_data = r.get(association_key)
 
