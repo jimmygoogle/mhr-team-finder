@@ -6,4 +6,4 @@ This project is based on weekly data from [MyHockeyRankings](https://myhockeyran
 
 ## Demo
 
-You can see a demo [here](http://www.itsawesomebaby.com/mhr)
+You can see a demo [here](https://mhr.itsawesomebaby.com/)
