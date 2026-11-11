@@ -1,12 +1,14 @@
 :root {
     --primary-color: #16468d;
     --accent-color: #e40c1e;
+    --secondary-color: #f0f0f0;
 }
 
 body {
     margin: 0;
     padding: 0;
     color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 .mhr-data {
@@ -91,7 +93,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    color: white;
+    color: var(--secondary-color);
     border-radius: 10px 10px 0px 0px;
 }
 
