@@ -333,7 +333,7 @@ def load_association_data():
         r.set(state_key, json.dumps(processed_states))
 
         # sleep a bit so we dont bring too much attention to ourselves :) [whatever]
-        time.sleep(20)
+        time.sleep(10)
 
 def parse_team(name):
     age = tier = league = gender = ""
