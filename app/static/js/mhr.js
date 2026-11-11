@@ -167,6 +167,8 @@ function updateMap(geojson) {
         .setPopup(popup)
         .addTo(map);
 
+        let activeChartPopup = null;
+
         popup.on('open', () => {
         const popupElement = popup.getElement();
         const chartIcons = popupElement.querySelectorAll('.chart-icon');
@@ -183,15 +185,30 @@ function updateMap(geojson) {
             const canvasId = `chart-${Date.now()}`;
 
             // 3. Create the additional chart popup
-            const chartPopup = new mapboxgl.Popup({ offset: 15, closeOnClick: true, maxWidth: '350px' })
+
+            // Close any previously open chart popup
+            if (activeChartPopup) {
+                activeChartPopup.remove();
+                activeChartPopup = null;
+            }
+
+            // Create the new chart popup
+            const chartPopup = new mapboxgl.Popup({
+                offset: 15,
+                closeOnClick: true,
+                maxWidth: '350px'
+            })
                 .setLngLat([lon, lat])
                 .setHTML(`
-                <div style="width: 300px; height: 200px; padding: 5px;">
-                    <strong>MHR history for ${teamName}</strong><br/>
-                    <canvas id="${canvasId}"></canvas>
-                </div>
+                    <div style="width: 300px; height: 200px; padding: 5px;">
+                        <strong>MHR history for ${teamName}</strong><br/>
+                        <canvas id="${canvasId}"></canvas>
+                    </div>
                 `)
                 .addTo(map);
+
+            // Keep track of the active popup
+            activeChartPopup = chartPopup;
 
             // 4. Initialize Chart.js AFTER the popup DOM element is mounted
             setTimeout(() => {
